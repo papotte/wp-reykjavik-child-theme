@@ -1,0 +1,21 @@
+/*!
+Theme Name:  Reykjavik Child Theme
+Theme URI:  https://github.com/papotte/wp-reykjavik-child-theme
+Description:  Theme to modify Reykjavik to suit our purposes
+Author:  Rossana Bermudez
+Textdomain:  reykjavik-child
+Author URI:  https://rossana.dev
+Template: reykjavik
+Version:  1.0
+License:  GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+/* FILE: main.scss */
+// Imports
+
+@import 'setup';
+
+@import 'css-vars';
+
+//@import 'custom';

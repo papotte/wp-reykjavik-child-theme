@@ -1,1 +1,6 @@
 .DS_Store
+node_modules
+build
+lib
+src/assets/css/
+src/assets/scss
