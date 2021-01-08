@@ -1,0 +1,6 @@
+/* FILE: editor-block/blocks/_jetpack.scss */
+
+.wp-block {
+	@import 'starter/content/plugins/jetpack/blocks';
+	@import 'main/plugins/_jetpack-blocks';
+}

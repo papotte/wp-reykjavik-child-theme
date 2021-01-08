@@ -1,8 +1,3 @@
-/* Clear */
-:focus {
-  outline: none;
-}
-
 /* Borders */
 
 .border-top {
@@ -78,52 +73,4 @@
 .py-md {
   padding-top: 16px;
   padding-bottom: 16px;
-}
-
-/* Fix theme */
-.entry {
-  padding-bottom: 48px;
-}
-
-.main-navigation-container .menu .current-menu-item > a, .main-navigation-container .menu .current-menu-item > a:hover {
-  border-color: #DD6892 !important;
-}
-
-.wp-block-group.alignwide .wp-block-group__inner-container {
-  max-width: 70%;
-}
-
-.intro-special-has-media {
-  background-image: none;
-  background-color: #DD6892 !important;
-}
-
-.intro-special {
-  background-image: none;
-  background-color: #DD6892 !important;
-  padding: 5%
-}
-
-.intro-special .intro-inner {
-  max-width: 70%;
-}
-
-.intro-special .intro-media {
-  display: none;
-}
-
-.wp-block-social-links:not(.is-style-logos-only) .wp-social-link-anchor {
-  background-color: #8940FA;
-  color: #fff;
-}
-
-.wp-block-latest-posts.wp-block-latest-posts:not(.is-grid) {
-  border: none;
-}
-
-.wp-block-latest-posts.wp-block-latest-posts:not(.is-grid) li + li {
-  border: none;
-  border-top: dashed 2px #ddd;
-  margin-top: 40px;
-  padding-top: 40px;
 }

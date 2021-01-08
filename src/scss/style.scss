@@ -18,4 +18,8 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 @import 'css-vars';
 
-//@import 'custom';
+@import 'starter/__index';
+
+@import 'main/main';
+
+@import 'custom';

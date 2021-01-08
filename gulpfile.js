@@ -21,7 +21,7 @@ const browsersync = false;
 
 // PHP settings
 const php = {
-    src: dir.src + 'template/**/*.php',
+    src: dir.src + '**/**/*.php',
     build: dir.build
 };
 
@@ -90,6 +90,7 @@ gulp.task('css', gulp.series('images', () => {
     return gulp.src(css.src)
         .pipe(sass(css.sassOpts))
         .pipe(postcss(css.processors))
+        .pipe(gulp.dest(dir.src))
         .pipe(gulp.dest(css.build));
 }));
 
