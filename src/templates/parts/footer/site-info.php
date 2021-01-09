@@ -50,7 +50,7 @@
 
 				?>
 				<span class="sep"> | </span>
-				<a href="#top" id="back-to-top" class="back-to-top"><?php esc_html_e( 'Back to top &uarr;', 'reykjavik' ); ?></a>
+				<a href="#top" id="back-to-top" class="back-to-top"><?php esc_html_e( 'Volver a arriba &uarr;', 'reykjavik' ); ?></a>
 
 			<?php else :
 

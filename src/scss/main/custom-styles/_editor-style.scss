@@ -4,138 +4,123 @@
 // TinyMCE editor styles overrides and fixes.
 //
 
-
-
-
-
 // Imports
 
-	@import '_extenders';
+@import '_extenders';
 
-	@import '_base';
+@import '_base';
 
-	@import '_accent';
+@import '_accent';
 
-	@import '_editor-typography';
-
-
-
+@import '_editor-typography';
 
 
 // Overrides and fixes for editor
 
-	// Core
+// Core
 
-		html {
-			max-width: 1200px + 40; // Default, will get overridden
-			padding: 20px;
-		}
+html {
+  max-width: 1200px + 40; // Default, will get overridden
+  padding: 20px;
+}
 
-		html,
-		html[lang] {
-			max-width: calc( #{ map_get( $customize_options, 'layout_width_content' ) } + 40px );
-			max-width: calc( var(--layout_width_content) + 40px );
-		}
+html,
+html[lang] {
+  max-width: calc(#{ map_get( $customize_options, 'layout_width_content' ) } + 40px);
+  max-width: calc(var(--layout_width_content) + 40px);
+}
 
-		body {
-			width: 100%;
-			max-width: 70%;
-			font-size: 16px; // Default, will get overridden
+body {
+  width: 100%;
+  max-width: 55em;
+  font-size: 16px; // Default, will get overridden
 
-			&.post-type-page {
-				max-width: 100%;
-			}
+  &.post-type-page {
+    max-width: 100%;
+  }
 
-			&.page-template-sidebar {
-				padding-#{$right}: percentage( $golden_minor ) !important; // {{RTL}} // Unfortunately, have to use `!important` as default WP editor styles force paddings too...
-			}
+  &.page-template-sidebar {
+    padding-#{$right}: percentage($golden_minor) !important; // {{RTL}} // Unfortunately, have to use `!important` as default WP editor styles force paddings too...
+  }
 
-			*,
-			*::after,
-			*::before {
-				border-color: inherit;
-			}
+  *,
+  *::after,
+  *::before {
+    border-color: inherit;
+  }
 
-		}
-
-
-
-	// Content colors
-
-		.mce-content-body {
-			@extend %site_content_colors;
-		}
+}
 
 
+// Content colors
 
-	// Media player
-
-		.mejs-container,
-		.wp-playlist {
-
-			body & {
-				margin: 0 !important;
-			}
-
-		}
-
-		.wpview-content {
-			margin: 0 0 ( $golden +em );
-		}
+.mce-content-body {
+  @extend %site_content_colors;
+}
 
 
+// Media player
 
-	// Tables
+.mejs-container,
+.wp-playlist {
 
-		.mce-item-table,
-		.mce-item-table td,
-		.mce-item-table th,
-		.mce-item-table caption {
-			border-width: 1px;
-			border-style: solid;
-		}
+  body & {
+    margin: 0 !important;
+  }
 
+}
 
-
-	// Pullquotes
-
-		blockquote.alignleft {
-			margin-left: 0;
-		}
-
-		blockquote.alignright {
-			margin-right: 0;
-		}
+.wpview-content {
+  margin: 0 0 ($golden +em);
+}
 
 
+// Tables
 
-	// Responsive media
-
-		img,
-		embed,
-		iframe,
-		object,
-		video {
-			max-width: 100%;
-		}
-
-		embed,
-		iframe,
-		object {
-			max-height: 320px;
-		}
-
-		embed,
-		iframe,
-		object,
-		video {
-			width: 100% !important;
-		}
+.mce-item-table,
+.mce-item-table td,
+.mce-item-table th,
+.mce-item-table caption {
+  border-width: 1px;
+  border-style: solid;
+}
 
 
+// Pullquotes
 
+blockquote.alignleft {
+  margin-left: 0;
+}
+
+blockquote.alignright {
+  margin-right: 0;
+}
+
+
+// Responsive media
+
+img,
+embed,
+iframe,
+object,
+video {
+  max-width: 100%;
+}
+
+embed,
+iframe,
+object {
+  max-height: 320px;
+}
+
+embed,
+iframe,
+object,
+video {
+  width: 100% !important;
+}
 
 
 // Additional imports
 
-	@import '_editor-layout-outdented';
+@import '_editor-layout-outdented';

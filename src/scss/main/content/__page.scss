@@ -5,239 +5,232 @@
 //
 
 
-
-
-
 // Page content
 
-	.page-header + .page-content {
-		margin-top: $golden +em;
-	}
-
+.page-header + .page-content {
+  margin-top: $golden +em;
+}
 
 
 // Special pages
 
-	// Error 404 and "Not found" page
+// Error 404 and "Not found" page
 
-		.error-404,
-		.not-found {
+.error-404,
+.not-found {
 
-			form {
-				display: inline-block;
-				width: percentage( $golden_major );
+  form {
+    display: inline-block;
+    width: percentage($golden_major);
 
-				&::before {
-					padding: ( $golden_minor +em ) 0;
-					line-height: 1em + $golden_minor / 2;
-				}
+    &::before {
+      padding: ($golden_minor +em) 0;
+      line-height: 1em + $golden_minor / 2;
+    }
 
-			}
+  }
 
-		}
+}
 
-		.not-found {
+.not-found {
 
-			// There is a sidebar on this page
+  // There is a sidebar on this page
 
-			form {
-				width: 100%;
-			}
+  form {
+    width: 100%;
+  }
 
-		}
+}
 
-		.error404 {
+.error404 {
 
-			.page-content {
-				margin-top: 1em;
-			}
+  .page-content {
+    margin-top: 1em;
+  }
 
-			form {
+  form {
 
-				@include media( map_get( $breakpoint, 'l' ) ) {
-					max-width: percentage( $golden_major );
-				}
+    @include media(map_get($breakpoint, 'l')) {
+      max-width: percentage($golden_major);
+    }
 
-				@include media( map_get( $breakpoint, 'xl' ) ) {
-					max-width: percentage( $golden_minor );
-				}
+    @include media(map_get($breakpoint, 'xl')) {
+      max-width: percentage($golden_minor);
+    }
 
-			}
+  }
 
-		}
-
+}
 
 
 // Page templates
 
-	// Blank
+// Blank
 
-		.page-template-blank {
-			padding: 0; // Remove any body padding on blank page template
-		}
-
-
-
-	// List child pages
-
-		// Page layout
-
-			.page-template-child-pages {
-				@extend %fullwidth_sections_layout;
-
-				&:not(.fl-builder) .site-main .entry-content {
-					@extend %content_width;
-					padding: $padding_vertical 0 0;
-
-						&-inner:not(:empty) {
-							padding-bottom: pow( $golden, 2 ) +rem;
-						}
-
-					@include media( map_get( $breakpoint, 'l' ) ) {
-
-						&-inner:not(:empty) {
-							padding-bottom: $padding_vertical;
-						}
-
-					}
-
-					@include media( map_get( $breakpoint, 'xl' ) ) {
-
-						&:first-child {
-							padding-top: $golden * $padding_vertical;
-						}
-
-					}
-
-				}
-
-				.entry-content:empty {
-					display: none;
-
-					+ .list-child-pages-section {
-						padding-top: $padding_vertical;
-
-						@include media( map_get( $breakpoint, 'xl' ) ) {
-							padding-top: $golden * $padding_vertical;
-						}
-
-					}
-
-				}
-
-			}
+.page-template-blank {
+  padding: 0; // Remove any body padding on blank page template
+}
 
 
+// List child pages
 
-		// Child pages list
+// Page layout
 
-			.list-child-pages {
-				display: flex;
-				flex-wrap: wrap;
-				margin-left: -1em;
-				margin-right: -1em;
+.page-template-child-pages {
+  @extend %fullwidth_sections_layout;
 
-				&-section {
-					clear: both;
-					padding-bottom: $padding_vertical;
+  &:not(.fl-builder) .site-main .entry-content {
+    @extend %content_width;
+    padding: $padding_vertical 0 0;
 
-					@include media( map_get( $breakpoint, 'xl' ) ) {
-						padding-bottom: $golden * $padding_vertical;
-					}
+    &:first-child {
+      padding-top: $golden_major * $padding_vertical;
+    }
 
-					&:first-child {
-						// What if child pages are above page content?
-						padding-bottom: 0;
-						padding-top: pow( $golden, 2 ) +em;
+    &-inner:not(:empty) {
+      padding-bottom: pow( $golden, 2 ) +rem;
+    }
 
-						@include media( map_get( $breakpoint, 'l' ) ) {
-							padding-top: $padding_vertical;
-						}
+    @include media(map_get($breakpoint, 'l')) {
 
-						@include media( map_get( $breakpoint, 'xl' ) ) {
-							padding-top: $golden * $padding_vertical;
-						}
+      &-inner:not(:empty) {
+        padding-bottom: $padding_vertical;
+      }
 
-					}
+    }
 
-				}
+    @include media(map_get($breakpoint, 'xl')) {
 
-				&-container {
-					@extend %content_width;
-				}
+      &:first-child {
+        padding-top: $golden_major * $padding_vertical;
+      }
 
-			}
+    }
 
+  }
 
+  .entry-content:empty {
+    display: none;
 
-		// Child page list item
+    + .list-child-pages-section {
+      padding-top: $padding_vertical;
 
-			.child-page {
-				flex: 0 1 auto;
-				display: flex;
-				flex-direction: column;
-				width: calc( 100% - 2em );
-				padding: $golden +em;
-				margin: 1em;
-				border-width: 1px;
-				border-style: solid;
-				border-bottom-width: 2px;
-				border-bottom-color: inherit;
+      @include media(map_get($breakpoint, 'xl')) {
+        padding-top: $golden * $padding_vertical;
+      }
 
-				@include media( map_get( $breakpoint, 'm' ) ) {
-					width: calc( 50% - 2em );
-					padding: 2em;
-				}
+    }
 
-				@include media( map_get( $breakpoint, 'l' ) ) {
-					width: calc( 33.33% - 2em );
+  }
 
-					&:nth-child(1):nth-last-child(2),
-					&:nth-child(2):nth-last-child(1) {
-						width: calc( 50% - 2em );
-					}
-
-				}
-
-				.entry-summary {
-					margin-bottom: 0;
-				}
-
-				p:not(:last-child) {
-					margin-bottom: 1em;
-				}
+}
 
 
+// Child pages list
 
-				// Child page thumbnail
+.list-child-pages {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -1em;
+  margin-right: -1em;
 
-					&-image {
-						margin-bottom: pow( $golden, 2 ) +rem;
-					}
+  &-section {
+    clear: both;
+    padding-bottom: $padding_vertical;
+
+    @include media(map_get($breakpoint, 'xl')) {
+      padding-bottom: $golden * $padding_vertical;
+    }
+
+    &:first-child {
+      // What if child pages are above page content?
+      padding-bottom: 0;
+      padding-top: pow( $golden, 2 ) +em;
+
+      @include media(map_get($breakpoint, 'l')) {
+        padding-top: $padding_vertical;
+      }
+
+      @include media(map_get($breakpoint, 'xl')) {
+        padding-top: $golden * $padding_vertical;
+      }
+
+    }
+
+  }
+
+  &-container {
+    @extend %content_width;
+  }
+
+}
 
 
+// Child page list item
 
-				// Child page title
+.child-page {
+  flex: 0 1 auto;
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 2em);
+  padding: $golden +em;
+  margin: 1em;
+  border-width: 1px;
+  border-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: inherit;
 
-					&-title {
-						margin: 0;
-						margin-bottom: $golden_minor + 1rem;
-					}
+  @include media(map_get($breakpoint, 'm')) {
+    width: calc(50% - 2em);
+    padding: 2em;
+  }
+
+  @include media(map_get($breakpoint, 'l')) {
+    width: calc(33.33% - 2em);
+
+    &:nth-child(1):nth-last-child(2),
+    &:nth-child(2):nth-last-child(1) {
+      width: calc(50% - 2em);
+    }
+
+  }
+
+  .entry-summary {
+    margin-bottom: 0;
+  }
+
+  p:not(:last-child) {
+    margin-bottom: 1em;
+  }
 
 
+  // Child page thumbnail
 
-				// More link
+  &-image {
+    margin-bottom: pow( $golden, 2 ) +rem;
+  }
 
-					.link-more {
-						// The container
-						margin-top: $golden +em;
-					}
 
-					.more-link {
-						// The actual link
-						@extend %button_base;
-						display: inline-block;
-						border-color: currentColor;
-					}
+  // Child page title
 
-			}
+  &-title {
+    margin: 0;
+    margin-bottom: $golden_minor + 1rem;
+  }
+
+
+  // More link
+
+  .link-more {
+    // The container
+    margin-top: $golden +em;
+  }
+
+  .more-link {
+    // The actual link
+    @extend %button_base;
+    display: inline-block;
+    border-color: currentColor;
+  }
+
+}

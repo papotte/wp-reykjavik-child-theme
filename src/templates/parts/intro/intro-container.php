@@ -14,23 +14,19 @@
 
 $class = (is_singular()) ? ('entry-header') : ('page-header');
 
+$secondary_class = (is_front_page()) ? ('mb-none intro-container-page') : ('intro-container');
+$wrapper_class = (is_front_page()) ? ('simple-intro content-area') : ('intro');
 
 ?>
 
-<section id="intro-container" class="<?php echo esc_attr($class); ?> intro-container">
+<section id="intro-container" class="<?php echo esc_attr($class); ?> <?php echo esc_attr($secondary_class); ?>">
 
     <?php get_sidebar('intro'); ?>
 
-    <?php do_action('wmhook_reykjavik_intro_before'); ?>
-
-    <div id="intro" class="intro">
+    <div id="intro" class="<?php echo esc_attr($wrapper_class); ?>">
         <div class="intro-inner">
-
             <?php do_action('wmhook_reykjavik_intro'); ?>
-
         </div>
     </div>
-
-    <?php do_action('wmhook_reykjavik_intro_after'); ?>
 
 </section>

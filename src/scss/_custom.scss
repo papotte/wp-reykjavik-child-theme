@@ -43,6 +43,10 @@
   margin-bottom: 16px;
 }
 
+.mb-none {
+  margin-bottom: 0 !important;
+}
+
 
 /* Standard padding */
 .pa-md {
@@ -73,4 +77,26 @@
 .py-md {
   padding-top: 16px;
   padding-bottom: 16px;
+}
+
+// map_get($customize_options, 'color_highlight');
+
+.wp-block-group.alignwide .wp-block-group__inner-container {
+  // max-width: 70%;
+}
+
+.wp-block-social-links:not(.is-style-logos-only) .wp-social-link-anchor {
+  background-color: #8940FA;
+  color: #fff;
+}
+
+
+.wp-block-column {
+  &.flex-grow {
+    flex: 1 1 auto;
+  }
+
+  &.flex-shrink {
+    flex: 0 1 auto;
+  }
 }

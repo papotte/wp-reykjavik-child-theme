@@ -13,18 +13,19 @@ $customize_options: (
   // For accessibility test with http://jxnblk.com/colorable/demos/text/
         'color_accent': #512c96,
         'color_highlight': #DD6892,
+        'color_separator': #ddd,
         'color_accent_text': #fefeff,
         'color_header_background': #fefeff,
         'color_header_text': #535354,
         'color_header_headings': #232324,
-        'color_intro_background': #DD6892,
-        'color_intro_text': #fefeff,
-        'color_intro_headings': #fefeff,
-        'color_intro_overlay_background': #180d2d,
+        'color_intro_background': #fafafb,
+        'color_intro_text': #535354,
+        'color_intro_headings': #232324,
+        'color_intro_overlay_background': #0f1732,
         'color_intro_overlay_text': #fefeff,
         'color_intro_overlay_opacity': 0.6,
-        'color_intro_widgets_background': #351b7e,
-        'color_intro_widgets_text': #d3d3d4,
+        'color_intro_widgets_background': #DD6892,
+        'color_intro_widgets_text': #fefeff,
         'color_intro_widgets_headings': #fefeff,
         'color_content_background': #fefeff,
         'color_content_text': #535354,
@@ -158,7 +159,7 @@ $page_content_width: $page_content_width - ( $page_content_gutter * .382 );
 
 // Spacing
 
-$padding_vertical: 5rem;
+$padding_vertical: 4rem;
 
 $mobile_menu_toggle_height: 3.618; // In rem.
 
