@@ -14,9 +14,34 @@
       z-index: 2;
       border: solid 1px rgba(255, 255, 255, .4);
       transition: all .15s ease-in-out;
+      pointer-events: none;
+    }
+
+    &:hover {
+      &:after {
+        border-width: 5px;
+      }
+
+      .entry-thumbnail-wrapper {
+        .entry-title {
+          .wrapper {
+            background: var(--color_accent);
+          }
+        }
+      }
     }
 
     .entry-thumbnail-wrapper {
+      > a {
+        height: 100%;
+        width: 100%;
+        display: block;
+
+        img {
+
+        }
+      }
+
       .entry-title {
         font-size: 1.2rem;
         font-weight: 600;
@@ -28,7 +53,7 @@
         line-height: 1.5em;
         margin: 0 0 1.5rem;
 
-        a {
+        .wrapper {
           background-color: #070707;
           color: #fff;
           display: inline-block;

@@ -4,5 +4,5 @@ build
 lib
 src/assets/css/
 src/assets/scss
-plugins/
+plugins
 dist
