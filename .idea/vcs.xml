@@ -7,6 +7,8 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/plugins/pdm-podcast" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/plugins/pds-podcast" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/plugins/simple-podcasting" vcs="Git" />
   </component>
 </project>

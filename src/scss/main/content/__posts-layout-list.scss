@@ -4,7 +4,7 @@
 // Posts list default layout styles
 //
 
-.posts-layout-list {
+.posts-layout-list, .posts-list {
 
   .posts {
     display: block;
@@ -27,7 +27,7 @@
   }
 
 
-  .type-post {
+  .type-post, .type-podcast {
     @extend .clearfix;
 
     .entry {
