@@ -18,6 +18,7 @@ const
     imagemin = require('gulp-imagemin'),
     sass = require('gulp-sass'),
     postcss = require('gulp-postcss');
+const zip = require('gulp-zip');
 
 // Browser-sync
 const browsersync = false;
@@ -143,6 +144,7 @@ gulp.task('woo-css', () => {
         .pipe(gulp.dest(dir.src + extraCss.dest))
         .pipe(gulp.dest(dir.build + extraCss.dest));
 });
+
 gulp.task('main-css', () => {
     return gulp.src(extraCss.src + 'main.scss')
         .pipe(sass(extraCss.sassOpts))
@@ -168,7 +170,15 @@ gulp.task('css', gulp.series('images',
             .pipe(gulp.dest(css.build));
     }));
 
-gulp.task('build', gulp.series('templates', 'css', 'plugins'));
+// Zip theme
+gulp.task('zip', () => {
+    return gulp.src('src/**')
+        .pipe(zip('reykjavik-child.zip'))
+        .pipe(gulp.dest('dist'));
+});
+
+gulp.task('copy-plugins', gulp.series('plugins'));
+gulp.task('build', gulp.series('templates', 'css'));
 
 // watch for file changes
 gulp.task('watch', () => {

@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "gulp build",
-    "start": "gulp build"
+    "copy": "gulp build && gulp copy-plugins",
+    "start": "gulp build",
+    "package": "rm -rf src/assets/css && gulp build && gulp zip"
   },
   "repository": {
     "type": "git",
@@ -32,6 +34,7 @@
     "gulp-strip-debug": "^3.0.0",
     "gulp-uglify": "^3.0.2",
     "gulp-util": "^3.0.8",
+    "gulp-zip": "^5.0.2",
     "postcss-assets": "^5.0.0"
   }
 }
