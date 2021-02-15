@@ -85,11 +85,31 @@
   // max-width: 70%;
 }
 
-.wp-block-social-links:not(.is-style-logos-only) .wp-social-link-anchor {
-  background-color: #8940FA;
-  color: #fff;
-}
+.wp-block-social-links:not(.is-style-logos-only) {
+  .wp-social-link- {
+    &anchor {
+      background-color: #8940FA;
+      color: #fff;
+    }
 
+    &apple-podcast {
+      background-color: #882fc4;
+      color: #fff;
+    }
+
+    &google-podcast {
+      background-color: #0066d9;
+      color: #fff;
+    }
+
+    &ivoox {
+      background-color: #FF8000;
+      color: #fff;
+    }
+  }
+
+
+}
 
 .wp-block-column {
   &.flex-grow {

@@ -19,7 +19,7 @@ $alignment_width: $alignment_width + $alignment_margin;
 
 	// These can not be CSS vars, we need to use SASS vars.
 	$max_width_content: calc( var(--layout_width_content) + var(--block_ui_margin) + var(--block_ui_margin) + var(--block_ui_border) );
-	$max_width_entry_content: calc( 36 * var(--typography_size_html) + var(--block_ui_margin) + var(--block_ui_margin) + var(--block_ui_border) );
+	$max_width_entry_content: calc( 70 * var(--typography_size_html) + var(--block_ui_margin) + var(--block_ui_margin) + var(--block_ui_border) );
 
 .block-editor-block-list__layout .block-editor-default-block-appender > .block-editor-default-block-appender__content,
 .block-editor-block-list__layout > .block-editor-block-list__block {
