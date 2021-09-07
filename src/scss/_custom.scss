@@ -126,3 +126,9 @@
     flex-direction: column-reverse;
   }
 }
+
+.wp-block-columns.align-middle > .wp-block-column{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

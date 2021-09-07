@@ -38,6 +38,10 @@
 		padding: 0;
 		margin: 0 0 ( pow( $golden, 2 ) +rem );
 
+		&:hover{
+			color: var(--color_accent);
+		}
+		
 		// Paginated title suffix
 
 			small {
