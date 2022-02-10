@@ -27,7 +27,7 @@
 
 // Default widget titles
 
-	.widget-title {
+	.widget-title, .widgettitle {
 		@extend %widget_title;
 	}
 

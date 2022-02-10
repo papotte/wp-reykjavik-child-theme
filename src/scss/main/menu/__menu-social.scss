@@ -11,6 +11,9 @@
 .social-links {
 	@extend %font_size_golden_minor;
 
+	display: flex;
+	gap: 8px;
+
 	.social-links-items {
 		margin: 0;
 		list-style: none;
