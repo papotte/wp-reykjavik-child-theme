@@ -1,24 +1,32 @@
 // Gulp.js configuration
 'use strict';
+// Gulp and plugins
+
+import gulp from 'gulp';
+
+import zip from 'gulp-zip';
+import postcss from 'gulp-postcss';
+import gutil from 'gulp-util';
+import newer from 'gulp-newer';
+import imagemin from 'gulp-imagemin';
+import autoprefixer from 'autoprefixer';
+import postcssAssets from 'postcss-assets';
+import cssNanno from 'cssnano';
+import dartSass from 'sass';
+import nodeSass from 'node-sass';
+import gulpSass from 'gulp-sass';
+const sass = gulpSass(nodeSass);
 
 const
     // source and build folders
     dir = {
         src: 'src/',
-        build: '/Users/rossanabermudez/Local Sites/politest/app/public/wp-content/themes/Reykjavik Child/'
+        build: '../politest/app/public/wp-content/themes/Reykjavik Child/'
     },
     plugins = {
         src: 'plugins/',
-        build: '/Users/rossanabermudez/Local Sites/politest/app/public/wp-content/plugins/'
-    },
-    // Gulp and plugins
-    gulp = require('gulp'),
-    gutil = require('gulp-util'),
-    newer = require('gulp-newer'),
-    imagemin = require('gulp-imagemin'),
-    sass = require('gulp-sass'),
-    postcss = require('gulp-postcss');
-const zip = require('gulp-zip');
+        build: '../politest/app/public/wp-content/plugins/'
+    };
 
 // Browser-sync
 const browsersync = false;
@@ -82,16 +90,16 @@ const css = {
         errLogToConsole: true
     },
     processors: [
-        require('postcss-assets')({
+        postcssAssets({
             loadPaths: ['images/'],
             basePath: dir.build,
             baseUrl: '/wp-content/themes/wptheme/'
         }),
-        require('autoprefixer')({
+        autoprefixer({
             browsers: ['last 2 versions', '> 2%']
         }),
         // require('css-mqpacker'),
-        require('cssnano')
+        cssNanno()
     ]
 };
 
