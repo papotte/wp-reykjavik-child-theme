@@ -14,22 +14,18 @@
 // @param  int $selector  The CSS selector to repeat.
 // @param  int $multiply  How many times to repeat the selector?
 //
-@function repeat_selector( $selector, $multiply: 1 ) {
+@function repeat_selector($selector, $multiply: 1) {
+  // Variables
 
-	// Variables
+  $output: "";
 
-		$output: '';
+  // Processing
 
+  @for $i from 1 through $multiply {
+    $output: $output + $selector;
+  }
 
-	// Processing
+  // Output
 
-		@for $i from 1 through $multiply {
-			$output: $output + $selector;
-		}
-
-
-	// Output
-
-		@return $output;
-
+  @return $output;
 } // /repeat_selector

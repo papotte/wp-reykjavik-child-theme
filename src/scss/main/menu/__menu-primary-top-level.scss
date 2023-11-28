@@ -4,26 +4,17 @@
 // Top level primary menu items
 //
 
-
-
-
-
 .main-navigation-container {
+  .menu > ul > li {
+    @include media(map_get($breakpoint, "l")) {
+      padding-top: $golden_minor + rem;
+      padding-bottom: $golden_minor + rem;
+      margin-#{$left}: $golden_major + rem; // {{RTL}}
 
-	.menu > ul > li {
-
-		@include media( map_get( $breakpoint, 'l' ) ) {
-			padding-top: $golden_minor +rem;
-			padding-bottom: $golden_minor +rem;
-			margin-#{$left}: $golden_major +rem; // {{RTL}}
-
-			> a {
-				border-#{$left}-width: 0; // {{RTL}}
-				border-top-width: 2px;
-			}
-
-		}
-
-	}
-
+      > a {
+        border-#{$left}-width: 0; // {{RTL}}
+        border-top-width: 2px;
+      }
+    }
+  }
 }

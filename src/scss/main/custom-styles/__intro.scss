@@ -4,7 +4,6 @@
 // Site intro section colors
 //
 
-
 .intro-container,
 .#{$special_color_class_prefix}intro,
 .#{$special_color_class_prefix}intro > .fl-row-content-wrap,
@@ -32,7 +31,8 @@
         flex-wrap: nowrap;
         margin: 0;
 
-        .widget_recent_episodes, .widget_podcast_episode {
+        .widget_recent_episodes,
+        .widget_podcast_episode {
           flex: 1 1 auto;
         }
 
@@ -44,15 +44,17 @@
         }
       }
 
-      .widget_recent_episodes, .widget_podcast_episode {
+      .widget_recent_episodes,
+      .widget_podcast_episode {
         padding: 1em 0;
         margin: 0;
 
-        .widget-title, .widgettitle {
+        .widget-title,
+        .widgettitle {
           background-color: #070707;
           color: #fff;
           display: inline-block;
-          font-size: .95rem;
+          font-size: 0.95rem;
           font-weight: 500;
           margin-bottom: 2rem;
           padding: 2px 10px;
@@ -65,7 +67,9 @@
             font-size: 2.058rem;
           }
 
-          .entry-summary, .episode-excerpt, .episode-content {
+          .entry-summary,
+          .episode-excerpt,
+          .episode-content {
             font-size: 1.272rem;
             line-height: 1.82rem;
           }
@@ -78,16 +82,17 @@
 // Front page special intro
 
 .intro-special {
-
   // Overlay
 
   .wp-custom-header::before {
-    background-color: map_get($customize_options, 'color_intro_overlay_background');
-    opacity: map_get($customize_options, 'color_intro_overlay_opacity');
+    background-color: map_get(
+      $customize_options,
+      "color_intro_overlay_background"
+    );
+    opacity: map_get($customize_options, "color_intro_overlay_opacity");
     background-color: var(--color_intro_overlay_background);
     opacity: var(--color_intro_overlay_opacity);
   }
-
 
   // Video fallback background
 
@@ -95,20 +100,22 @@
     background-color: #222223; //*
   }
 
-
   // Front page title and excerpt (the intro text)
 
   &-has-media .intro {
-    color: map_get($customize_options, 'color_intro_overlay_text');
+    color: map_get($customize_options, "color_intro_overlay_text");
     color: var(--color_intro_overlay_text);
 
-    h2, h3, h4,
-    .h1, .h2, .h3, .h4,
+    h2,
+    h3,
+    h4,
+    .h1,
+    .h2,
+    .h3,
+    .h4,
     a:not(.button),
     .accent-color {
       color: inherit; //*
     }
-
   }
-
 }

@@ -4,85 +4,71 @@
 // Widgets
 //
 
-
-
-
-
 // Basic global widget styles
 
-	.widget {
+.widget {
+  &[class*="set-colors-"] {
+    padding-left: $golden + em;
+    padding-right: $golden + em;
+  }
 
-		&[class*="set-colors-"] {
-			padding-left: $golden +em;
-			padding-right: $golden +em;
-		}
+  form {
+    margin-bottom: 0;
+  }
 
-		form {
-			margin-bottom: 0;
-		}
+  input,
+  select,
+  textarea {
+    .sidebar &,
+    .footer-widgets & {
+      width: 100%;
+    }
+  }
 
-		input,
-		select,
-		textarea {
+  li a {
+    text-decoration: none;
 
-			.sidebar &,
-			.footer-widgets & {
-				width: 100%;
-			}
+    @include haf() {
+      text-decoration: underline;
+    }
+  }
 
-		}
+  ul {
+    ul {
+      border-top-width: 1px;
+      border-top-style: solid;
+    }
 
-		li a {
-			text-decoration: none;
+    li {
+      border-top-width: 1px;
+      border-top-style: solid;
+      border-bottom-width: 0;
 
-			@include haf() {
-				text-decoration: underline;
-			}
+      &:first-child {
+        border-top-width: 0;
+      }
 
-		}
+      + li {
+        margin-top: 0;
+      }
 
-		ul {
-
-			ul {
-				border-top-width: 1px;
-				border-top-style: solid;
-			}
-
-			li {
-				border-top-width: 1px;
-				border-top-style: solid;
-				border-bottom-width: 0;
-
-				&:first-child {
-					border-top-width: 0;
-				}
-
-				+ li {
-					margin-top: 0;
-				}
-
-				ul {
-					margin: 0;
-				}
-
-			}
-
-		}
-
-	}
-
-
+      ul {
+        margin: 0;
+      }
+    }
+  }
+}
 
 // Imports
 
-	@import '_widget-icons';
+@import "_widget-icons";
 
-	@import '_widget-calendar';
+@import "_widget-calendar";
 
-	@import '_widget-custom-menu';
+@import "_widget-custom-menu";
 
-	@import '_widget-recent-posts';
+@import "_widget-recent-posts";
 
-	@import '_widget-tag-cloud';
+@import "_widget-tag-cloud";
 
-	@import '_widget-text';
+@import "_widget-text";

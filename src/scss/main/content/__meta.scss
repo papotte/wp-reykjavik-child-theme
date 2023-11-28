@@ -4,11 +4,10 @@
 // Entry meta
 //
 
-
 .entry-meta {
   padding: 0;
   margin-top: 0;
-  margin-bottom: $golden_major +rem;
+  margin-bottom: $golden_major + rem;
   border-width: 0;
 
   &:empty,
@@ -19,13 +18,13 @@
 
   &-element {
     @extend %font_weight_500;
-    margin-#{$right}: $golden_major +em; // {{RTL}}
+    margin-#{$right}: $golden_major + em; // {{RTL}}
     opacity: 1;
   }
 
   &-description {
     @extend %font_weight_400;
-    margin-#{$right}: $golden_minor +em; // {{RTL}}
+    margin-#{$right}: $golden_minor + em; // {{RTL}}
     text-transform: uppercase;
   }
 
@@ -35,101 +34,89 @@
     @include haf() {
       text-decoration: underline;
     }
-
   }
 
   .author {
-
     body:not(.group-blog) & {
       display: none;
     }
-
   }
 
   .tags-links a {
     text-transform: none;
 
     &:not(:last-child)::after {
-      content: ',';
+      content: ",";
     }
-
   }
 
   body.single[class*="paged-"] .site-main > .entry > & {
     display: none;
   }
 
-
   // Single post meta
 
   .single & {
-    margin-bottom: pow( $golden, 2 ) +em;
+    margin-bottom: pow($golden, 2) + em;
 
     &-element {
       @extend %font_size_small;
     }
-
   }
 
   .single .site-main > .entry > & {
     display: flex;
     flex-wrap: wrap;
-    margin-left: -.5rem;
-    margin-right: -.5rem;
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
 
-    @include media(map_get($breakpoint, 'xl')) {
+    @include media(map_get($breakpoint, "xl")) {
       margin-left: -25%;
       margin-right: -25%;
     }
 
     .entry-meta-element {
       flex: 1;
-      padding: ($golden_major +em) 1em;
-      margin: .5rem;
+      padding: ($golden_major + em) 1em;
+      margin: 0.5rem;
       border-width: 1px;
       border-style: solid;
 
-      @include media(map_get($breakpoint, 'm')) {
+      @include media(map_get($breakpoint, "m")) {
         min-width: calc(33.33% - 1rem);
       }
-
     }
 
     .entry-meta-description {
       display: block;
-      font-size: .809em;
+      font-size: 0.809em;
 
-      @include in('^.comments-link') {
+      @include in("^.comments-link") {
         display: inline;
       }
-
     }
 
     .label-updated {
       display: none;
     }
-
   }
 
   .single.has-widgets-sidebar .site-main > .entry > & {
-    margin-left: -.5rem;
-    margin-right: -.5rem;
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
   }
-
 
   // When page builder used
 
   .single.fl-builder .site-main > .entry > &,
   .single.content-layout-no-paddings .site-main > .entry > & {
-    padding: .5rem;
+    padding: 0.5rem;
     margin: 0;
 
     .entry-meta-element {
       min-width: auto;
     }
-
   }
-
 
   // In loop
 
@@ -137,7 +124,7 @@
   .single.content-layout-no-paddings .posts & {
     @extend %font_size_small;
     padding: 1em 0;
-    margin: 0 0 ($golden +rem);
+    margin: 0 0 ($golden + rem);
   }
 
   .posts & {
@@ -162,5 +149,4 @@
   a & {
     cursor: pointer;
   }
-
 }

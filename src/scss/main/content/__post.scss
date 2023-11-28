@@ -4,21 +4,18 @@
 // Post styles
 //
 
-
 // Content
 
 .entry-content {
   @extend .clearfix;
 }
 
-
 // Excerpt
 
 .entry-summary {
-  margin: 0 0 ($golden +em);
+  margin: 0 0 ($golden + em);
 
   &.has-more-tag {
     text-transform: uppercase;
   }
-
 }

@@ -10,16 +10,12 @@
 // @version  2.0.3
 //
 
-
-
-
-
 // Imports
 
-	@import 'setup';
+@import "setup";
 
-	@import 'css-vars';
+@import "css-vars";
 
-	@import 'starter/__index';
+@import "starter/__index";
 
-	@import 'main/main';
+@import "main/main";

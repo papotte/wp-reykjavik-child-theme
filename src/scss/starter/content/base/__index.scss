@@ -1,13 +1,13 @@
 /* FILE: starter/content/base/__index.scss */
 
-@import 'elements';
-@import 'helpers';
-@import 'clearing';
-@import 'breakpoints';
+@import "elements";
+@import "helpers";
+@import "clearing";
+@import "breakpoints";
 
-@import 'accessibility';
+@import "accessibility";
 
 #{ $wrapper_modifiers } {
-	@import 'modifiers';
-	@import 'modifiers-backcompat';
+  @import "modifiers";
+  @import "modifiers-backcompat";
 }

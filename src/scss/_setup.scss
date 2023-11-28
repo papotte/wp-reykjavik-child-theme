@@ -8,47 +8,51 @@
 
 $customize_options: (
   // Logo
-        'custom_logo_height': 50px,
+  "custom_logo_height": 50px,
   // Colors
   // For accessibility test with http://jxnblk.com/colorable/demos/text/
-        'color_accent': #512c96,
-        'color_highlight': #DD6892,
-        'color_separator': #ddd,
-        'color_accent_text': #fefeff,
-        'color_header_background': #fefeff,
-        'color_header_text': #535354,
-        'color_header_headings': #232324,
-        'color_intro_background': #fafafb,
-        'color_intro_text': #535354,
-        'color_intro_headings': #232324,
-        'color_intro_overlay_background': #0f1732,
-        'color_intro_overlay_text': #fefeff,
-        'color_intro_overlay_opacity': 0.6,
-        'color_intro_widgets_background': #DD6892,
-        'color_intro_widgets_text': #fefeff,
-        'color_intro_widgets_headings': #fefeff,
-        'color_content_background': #fefeff,
-        'color_content_text': #535354,
-        'color_content_headings': #232324,
-        'color_footer_background': #351b7e,
-        'color_footer_text': #d3d3d4,
-        'color_footer_headings': #fefeff,
-        'footer_image': 'none',
-        'footer_image_position': 50% 50%,
-        'footer_image_size': cover,
-        'footer_image_repeat': repeat,
-        'footer_image_attachment': scroll,
-        'footer_image_opacity': 0.15,
+  "color_accent": #512c96,
+  "color_highlight": #dd6892,
+  "color_separator": #ddd,
+  "color_accent_text": #fefeff,
+  "color_header_background": #fefeff,
+  "color_header_text": #535354,
+  "color_header_headings": #232324,
+  "color_intro_background": #fafafb,
+  "color_intro_text": #535354,
+  "color_intro_headings": #232324,
+  "color_intro_overlay_background": #0f1732,
+  "color_intro_overlay_text": #fefeff,
+  "color_intro_overlay_opacity": 0.6,
+  "color_intro_widgets_background": #dd6892,
+  "color_intro_widgets_text": #fefeff,
+  "color_intro_widgets_headings": #fefeff,
+  "color_content_background": #fefeff,
+  "color_content_text": #535354,
+  "color_content_headings": #232324,
+  "color_footer_background": #351b7e,
+  "color_footer_text": #d3d3d4,
+  "color_footer_headings": #fefeff,
+  "footer_image": "none",
+  "footer_image_position": 50% 50%,
+  "footer_image_size": cover,
+  "footer_image_repeat": repeat,
+  "footer_image_attachment": scroll,
+  "footer_image_opacity": 0.15,
   // Layout
-        'layout_width_site': 1640px,
-        'layout_width_content': 1200px,
+  "layout_width_site": 1640px,
+  "layout_width_content": 1200px,
   // Typography
-        'typography_size_html': 14px,
-        'typography_fonts_text': ('Open Sans', 'Helvetica Neue', 'Arial', sans-serif),
-        'typography_fonts_headings': ('Montserrat', 'Helvetica Neue', 'Arial', sans-serif),
-        'typography_fonts_logo': ('Montserrat', 'Helvetica Neue', 'Arial', sans-serif),
+  "typography_size_html": 14px,
+  "typography_fonts_text": ("Open Sans", "Helvetica Neue", "Arial", sans-serif),
+  "typography_fonts_headings": (
+    "Montserrat",
+    "Helvetica Neue",
+    "Arial",
+    sans-serif
+  ),
+  "typography_fonts_logo": ("Montserrat", "Helvetica Neue", "Arial", sans-serif)
 );
-
 
 // Typography
 
@@ -74,54 +78,58 @@ $setup_headings: (
   // "Second, different browsers handle subpixel rounding issues differently. This means we’ll never be able to get pixel-perfect rhythms no matter how hard we try."
   // "So, here’s what I realized. It’s impossible to apply perfect responsive vertical rhythms across different browsers. At least not with the current technology."
   // @see "Golden Ditonic Scale" at http://spencermortensen.com/articles/typographic-scale/ or http://www.modularscale.com/?1,0.4858&em&1.618
-        'h1, .h1' : (
-                2.618,
-                1.191,
-                ( 4 * $typography_line_height - 2.618 * 1.191 - $typography_margin_bottom ) / 2.618,
-                $typography_margin_bottom / 2.618 / 1.191
-        ),
-        'h2, .h2' : (
-                2.058,
-                1.191,
-                ( 4 * $typography_line_height - 2.058 * 1.191 - $typography_margin_bottom ) / 2.058,
-                $typography_margin_bottom / 2.058 / 1.191
-        ),
-        'h3, .h3' : (
-                1.618,
-                1.382,
-                ( 3 * $typography_line_height - 1.618 * 1.382 - $typography_margin_bottom ) / 1.618,
-                $typography_margin_bottom / 1.618 / 1.382
-        ),
-        'h4, .h4' : (
-                1.272,
-                1.382,
-                ( 3 * $typography_line_height - 1.272 * 1.382 - $typography_margin_bottom ) / 1.272,
-                $typography_margin_bottom / 1.272 / 1.382
-        ),
-        'h5, .h5' : (
-                1.000,
-                1.618,
-                ( 3 * $typography_line_height - 1.000 * 1.618 - $typography_margin_bottom ) / 1.000,
-                $typography_margin_bottom / 1.000 / 1.618
-        ),
-        'h6, .h6' : (
-                1.000,
-                1.618,
-                ( 3 * $typography_line_height - 1.000 * 1.618 - $typography_margin_bottom ) / 1.000,
-                $typography_margin_bottom / 1.000 / 1.618
-        ),
+  "h1, .h1":
+    (
+      2.618,
+      1.191,
+      (4 * $typography_line_height - 2.618 * 1.191 - $typography_margin_bottom) /
+        2.618,
+      $typography_margin_bottom / 2.618 / 1.191
+    ),
+  "h2, .h2": (
+    2.058,
+    1.191,
+    (4 * $typography_line_height - 2.058 * 1.191 - $typography_margin_bottom) /
+      2.058,
+    $typography_margin_bottom / 2.058 / 1.191
+  ),
+  "h3, .h3": (
+    1.618,
+    1.382,
+    (3 * $typography_line_height - 1.618 * 1.382 - $typography_margin_bottom) /
+      1.618,
+    $typography_margin_bottom / 1.618 / 1.382
+  ),
+  "h4, .h4": (
+    1.272,
+    1.382,
+    (3 * $typography_line_height - 1.272 * 1.382 - $typography_margin_bottom) /
+      1.272,
+    $typography_margin_bottom / 1.272 / 1.382
+  ),
+  "h5, .h5": (
+    1,
+    1.618,
+    (3 * $typography_line_height - 1 * 1.618 - $typography_margin_bottom) / 1,
+    $typography_margin_bottom / 1 / 1.618
+  ),
+  "h6, .h6": (
+    1,
+    1.618,
+    (3 * $typography_line_height - 1 * 1.618 - $typography_margin_bottom) / 1,
+    $typography_margin_bottom / 1 / 1.618
+  )
 );
 
 // Display font size
 
 // @see "Golden Ditonic Scale" at http://spencermortensen.com/articles/typographic-scale/ or http://www.modularscale.com/?1,0.4858&em&1.618
 $display_text_size: (
-        1 : 2.618em,
-        2 : 3.329em,
-        3 : 4.236em,
-        4 : 5.387em,
+  1: 2.618em,
+  2: 3.329em,
+  3: 4.236em,
+  4: 5.387em,
 );
-
 
 // Others
 
@@ -140,14 +148,14 @@ $display_text_size: (
 // Predefined colors
 
 $colors: (
-        'error_background': rgba(#e00, .85),
-        'error_text': #fff,
-        'info_background': rgba(#05e, .85),
-        'info_text': #fff,
-        'success_background': rgba(#072, .85),
-        'success_text': #fff,
-        'warning_background': rgba(#fd0, .85),
-        'warning_text': #310,
+  "error_background": rgba(#e00, 0.85),
+  "error_text": #fff,
+  "info_background": rgba(#05e, 0.85),
+  "info_text": #fff,
+  "success_background": rgba(#072, 0.85),
+  "success_text": #fff,
+  "warning_background": rgba(#fd0, 0.85),
+  "warning_text": #310,
 );
 
 // Dimensions
@@ -155,7 +163,7 @@ $colors: (
 $page_content_width: 61.8; // In %
 $page_content_gutter: 8; // In %
 
-$page_content_width: $page_content_width - ( $page_content_gutter * .382 );
+$page_content_width: $page_content_width - ($page_content_gutter * 0.382);
 
 // Spacing
 
@@ -165,73 +173,77 @@ $mobile_menu_toggle_height: 3.618; // In rem.
 
 // Opacity
 
-$overlay_from_text_color_opacity: .07;
+$overlay_from_text_color_opacity: 0.07;
 
 // Animation
 
-$small_animation_speed: .3; // Seconds
-$large_animation_speed: .5; // Seconds
+$small_animation_speed: 0.3; // Seconds
+$large_animation_speed: 0.5; // Seconds
 
 // Decorations
 
 // Drop shadows
 
 $column_box_shadows: (
-        'small': 1rem,
-        'medium': 2rem,
-        'large': 3rem,
+  "small": 1rem,
+  "medium": 2rem,
+  "large": 3rem,
 );
 
-$column_box_shadows_opacity: .2;
+$column_box_shadows_opacity: 0.2;
 
 // Entry meta
 
 $entry_meta_icons: (
   // class: char
-        'author': '\f304',
-        'cat-links': '\f301',
-        'comments-link a': '\f300',
-        'entry-date': '\f303',
-        'tags-links': '\f302',
+  "author": "\f304",
+  "cat-links": "\f301",
+  "comments-link a": "\f300",
+  "entry-date": "\f303",
+  "tags-links": "\f302"
 );
 
 // Elements
 
 // Special color classes
-$special_color_class_prefix: 'set-colors-';
+$special_color_class_prefix: "set-colors-";
 
 // Margin bottom
 $elements_margin_bottom: (
-        'h1',
-        'h2',
-        'h3',
-        '.h1',
-        '.h2',
-        '.h3',
-        'p',
-        'ol',
-        'ul',
-        'blockquote',
-        'figure',
-        '.gallery',
-        '.tiled-gallery',
+  "h1",
+  "h2",
+  "h3",
+  ".h1",
+  ".h2",
+  ".h3",
+  "p",
+  "ol",
+  "ul",
+  "blockquote",
+  "figure",
+  ".gallery",
+  ".tiled-gallery"
 );
 
 // Buttons
 $elements_button: (
-        '.button',
-        'button',
-        '[type="button"]',
-        '[type="reset"]',
-        '[type="submit"]',
+  ".button",
+  "button",
+  '[type="button"]',
+  '[type="reset"]',
+  '[type="submit"]'
 );
 $elements_button_beaver_builder: ();
-$beaver_builder_button_prepend: '.site .fl-builder-content .fl-module';
+$beaver_builder_button_prepend: ".site .fl-builder-content .fl-module";
 @each $button in $elements_button {
-  $elements_button_beaver_builder: append($elements_button_beaver_builder, '#{$beaver_builder_button_prepend} #{$button}', comma);
+  $elements_button_beaver_builder: append(
+    $elements_button_beaver_builder,
+    "#{$beaver_builder_button_prepend} #{$button}",
+    comma
+  );
 }
 
-$elements_button: append($elements_button, (
-        '.child-page .more-link',
-        '.main-navigation-container .button > a',
-));
+$elements_button: append(
+  $elements_button,
+  (".child-page .more-link", ".main-navigation-container .button > a")
+);

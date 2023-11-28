@@ -1,7 +1,7 @@
 /* FILE: starter/content/wp/blocks/_block.scss */
 
 [class^="wp-block-"] {
-  margin-bottom: $golden +em;
+  margin-bottom: $golden + em;
 
   &:last-child {
     margin-bottom: 0;
@@ -9,9 +9,8 @@
 
   figcaption {
     margin: 0;
-    padding: $golden_major +em;
+    padding: $golden_major + em;
   }
-
 }
 
 %block_list_no_style {
@@ -23,15 +22,14 @@
   margin-left: 0;
   margin-right: 0;
   list-style: none;
-  border-top-width: $golden_minor +em;
+  border-top-width: $golden_minor + em;
   border-top-style: solid;
-  border-bottom-width: $golden_minor +em;
+  border-bottom-width: $golden_minor + em;
   border-bottom-style: solid;
 
   [class^="wp-block-"] {
     margin-bottom: 0;
   }
-
 }
 
 %block_list_items_child {
@@ -44,7 +42,7 @@
     text-decoration: none;
     font-size: 1.618em;
     font-weight: 700;
-    color: map_get($customize_options, 'color_header_headings');
+    color: map_get($customize_options, "color_header_headings");
     vertical-align: middle;
   }
 
@@ -60,8 +58,7 @@
 
   &:not(:first-child) {
     margin-top: 2.3em;
-    border-top: dashed 2px map_get($customize_options, 'color_separator');
+    border-top: dashed 2px map_get($customize_options, "color_separator");
     padding-top: 2.3em;
   }
-
 }

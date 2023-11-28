@@ -1,22 +1,19 @@
 /* FILE: starter/content/wp/blocks/_gallery.scss */
 
-@if ( index( $support__block, 'gallery' ) ) {
+@if (index($support__block, "gallery")) {
+  .wp-block-gallery {
+    margin-left: 0;
+    margin-right: 0;
 
-	.wp-block-gallery {
-		margin-left: 0;
-		margin-right: 0;
+    &.alignleft,
+    &.aligncenter,
+    &.alignright {
+      max-width: $alignment_width;
+    }
 
-		&.alignleft,
-		&.aligncenter,
-		&.alignright {
-			max-width: $alignment_width;
-		}
-
-		.blocks-gallery-caption {
-			width: 100%;
-			text-align: center;
-		}
-
-	}
-
+    .blocks-gallery-caption {
+      width: 100%;
+      text-align: center;
+    }
+  }
 }

@@ -4,34 +4,32 @@
 // Main theme styles
 //
 
-
-
-
-
 // Imports
 
-	@import 'icons/icons';
+@import "icons/icons";
 
-	@import 'base/base';
+@import "base/base";
 
-	@import 'typography/typography';
+@import "typography/typography";
 
-	@import 'forms/forms';
+@import "forms/forms";
 
-	@import 'headings/headings';
+@import "headings/headings";
 
-	@import 'header/header';
+@import "header/header";
 
-	@import 'menu/menu';
+@import "menu/menu";
 
-	@import 'wp/wp';
+@import "wp/wp";
 
-	@import 'content/content';
+@import "content/content";
 
-	@import 'footer/footer';
+@import "footer/footer";
 
-	@import 'sidebar/sidebar';
+@import "sidebar/sidebar";
 
-	@import 'plugins/plugins';
+@import "plugins/plugins";
 
-	@import 'shame/shame';
+@import "shame/shame";
+
+@import "custom-styles/main";

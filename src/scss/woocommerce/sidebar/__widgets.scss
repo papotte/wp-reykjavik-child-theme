@@ -4,88 +4,75 @@
 // Widgets WooCommerce
 //
 
-
-
-
-
 // Widgets global styles
 
-	// Product lists
+// Product lists
 
-		.product_list_widget {
+.product_list_widget {
+  li {
+    a {
+      font-weight: 700;
+    }
 
-			li {
+    .widget & {
+      padding: ($golden_major + rem) 0;
+      overflow: hidden;
 
-				a {
-					font-weight: 700;
-				}
+      .fl-module & {
+        padding-top: 1em;
+        padding-bottom: 1em;
+      }
+    }
+  }
 
-				.widget & {
-					padding: ( $golden_major +rem ) 0;
-					overflow: hidden;
+  a {
+    display: block;
+    margin-bottom: $golden_minor + em;
+  }
 
-					.fl-module & {
-						padding-top: 1em;
-						padding-bottom: 1em;
-					}
+  img {
+    float: $right; // {{RTL}}
+    width: pow($golden, 2) + em;
+    margin-#{$left}: 1em;
+  }
 
-				}
+  .star-rating {
+    margin-bottom: $golden_major + em;
+  }
+}
 
-			}
+// Product counts
 
-			a {
-				display: block;
-				margin-bottom: $golden_minor +em;
-			}
-
-			img {
-				float: $right; // {{RTL}}
-				width: pow( $golden, 2 ) +em;
-				margin-#{$left}: 1em;
-			}
-
-			.star-rating {
-				margin-bottom: $golden_major +em;
-			}
-
-		}
-
-
-
-	// Product counts
-
-		.widget.woocommerce .count {
-			float: $right; // {{RTL}}
-			margin-#{$left}: $golden_minor +em; // {{RTL}}
-			font-size: 1em;
-		}
-
-
+.widget.woocommerce .count {
+  float: $right; // {{RTL}}
+  margin-#{$left}: $golden_minor + em; // {{RTL}}
+  font-size: 1em;
+}
 
 // Imports
 
-	@import '_widget-cart';
+@import "_widget-cart";
 
-	@import '_widget-layered-nav';
+@import "_widget-layered-nav";
 
-	@import '_widget-layered-nav-filters';
+@import "_widget-layered-nav-filters";
 
-	@import '_widget-price-filter';
+@import "_widget-price-filter";
 
-	@import '_widget-product-categories';
+@import "_widget-product-categories";
 
-	// @import '_widget-products';
+// @import '_widget-products';
 
-	// @import '_widget-product-search';
+// @import '_widget-product-search';
 
-	@import '_widget-product-tags';
+@import "_widget-product-tags";
 
-	// @import '_widget-recently-viewed';
+// @import '_widget-recently-viewed';
 
-	@import '_widget-recent-reviews';
+@import "_widget-recent-reviews";
 
-	// @import '_widget-top-rated-products';
+// @import '_widget-top-rated-products';
 
-	// WC2.6+
+// WC2.6+
 
-	@import '_widget-average-rating-filter';
+@import "_widget-average-rating-filter";

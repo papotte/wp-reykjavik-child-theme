@@ -4,9 +4,7 @@
 // Intro section
 //
 
-
 .intro {
-
   // Intro title and widgets container
 
   &-container {
@@ -17,30 +15,26 @@
     z-index: 0;
   }
 
-
   // Intro media (image or video)
 
   &-media {
-
     &.has-header-video {
       position: relative;
       height: 33vh;
       overflow: hidden;
 
-      @include media(map_get($breakpoint, 'l')) {
+      @include media(map_get($breakpoint, "l")) {
         height: 66vh;
       }
-
     }
 
     .paged & {
       display: none;
     }
 
-
     // Make sure the images are not too small on mobile screens
 
-    @include media((map_get($breakpoint, 'm'), 'max-width')) {
+    @include media((map_get($breakpoint, "m"), "max-width")) {
       overflow: hidden;
 
       .site & img {
@@ -51,13 +45,14 @@
         max-height: 16em;
         max-height: 38vh;
         #{$left}: 50%; // {{RTL}}
-        @include rtl_property(transform, translateX(-50%), translateX(50%)); // {{RTL}}
+        @include rtl_property(
+          transform,
+          translateX(-50%),
+          translateX(50%)
+        ); // {{RTL}}
       }
-
     }
-
   }
-
 
   // Intro title container
 
@@ -66,13 +61,11 @@
     @extend %content_width;
     padding: ($golden_major * $padding_vertical) 0;
 
-    @include media(map_get($breakpoint, 'xl')) {
+    @include media(map_get($breakpoint, "xl")) {
       padding-top: $padding_vertical;
       padding-bottom: $padding_vertical;
     }
-
   }
-
 
   // Entry title in intro section
 
@@ -91,12 +84,10 @@
     }
 
     &.has-page-summary {
-
-      @include media(map_get($breakpoint, 'xl')) {
+      @include media(map_get($breakpoint, "xl")) {
         float: $left; // {{RTL}}
         width: percentage($page_content_width / 100);
       }
-
     }
 
     &-separator {
@@ -105,28 +96,25 @@
 
     &-tagline {
       display: block;
-      font-size: $golden_major +em;
+      font-size: $golden_major + em;
     }
-
   }
-
 }
-
 
 // Excerpt
 
 .page-summary {
-  margin-top: $golden +em;
+  margin-top: $golden + em;
   max-width: 70%;
 
   .has-page-summary + & {
-
-    @include media(map_get($breakpoint, 'xl')) {
+    @include media(map_get($breakpoint, "xl")) {
       float: $right; // {{RTL}}
-      width: percentage(( 100 - $page_content_width - $page_content_gutter ) / 100);
+      width: percentage(
+        (100 - $page_content_width - $page_content_gutter) / 100
+      );
       margin: 0;
     }
-
   }
 
   p {
@@ -135,11 +123,8 @@
     &:last-child {
       margin-bottom: 0;
     }
-
   }
-
 }
-
 
 // WordPress media
 
@@ -168,21 +153,20 @@
     border-radius: 2px;
     overflow: hidden;
     box-shadow: none;
-    opacity: .33;
+    opacity: 0.33;
     z-index: 10;
 
     @include haf() {
-      opacity: .66;
+      opacity: 0.66;
     }
-
   }
 
   .wp-custom-header-video-play::before {
-    content: '\f448';
+    content: "\f448";
   }
 
   .wp-custom-header-video-pause::before {
-    content: '\f452';
+    content: "\f452";
   }
 
   .has-header-video & {
@@ -197,28 +181,20 @@
     video {
       @extend %video_object;
     }
-
   }
-
 }
-
 
 // Hide default page header when intro section displayed
 
 .page-header {
-
   .site-main > & {
-
     .blog &,
     .archive &,
     .search-results & {
       @extend %screen_reader_hiding;
     }
-
   }
-
 }
-
 
 // Special front page intro
 
@@ -229,7 +205,10 @@
   background-position: 50% 50%;
   overflow: hidden;
   background-image: none;
-  background-color: map_get($customize_options, 'color_intro_background') !important;
+  background-color: map_get(
+    $customize_options,
+    "color_intro_background"
+  ) !important;
 
   .wp-custom-header::before,
   .intro-media {
@@ -244,10 +223,9 @@
     height: 100%;
 
     &::before {
-      content: '';
+      content: "";
       z-index: 5;
     }
-
   }
 
   .intro {
@@ -255,16 +233,14 @@
     position: relative;
     z-index: 10;
 
-    @include media(map_get($breakpoint, 'xl')) {
+    @include media(map_get($breakpoint, "xl")) {
       font-size: 1em + $golden_minor / 2;
     }
 
     &-media {
-
       img {
         display: none;
       }
-
     }
 
     &-inner {
@@ -281,12 +257,11 @@
     }
 
     &-title {
-      font-size: pow( 1 + $golden_minor, 3 ) +em;
+      font-size: pow(1 + $golden_minor, 3) + em;
 
-      @include media(map_get($breakpoint, 'xl')) {
-        font-size: pow( 1 + $golden_minor, 4 ) +em;
+      @include media(map_get($breakpoint, "xl")) {
+        font-size: pow(1 + $golden_minor, 4) + em;
       }
-
     }
 
     .entry-subtitle {
@@ -295,9 +270,7 @@
     }
 
     .page-summary {
-      margin-top: pow( $golden, 2 ) +em;
+      margin-top: pow($golden, 2) + em;
     }
-
   }
-
 }

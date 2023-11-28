@@ -7,24 +7,18 @@
 // @copyright  WebMan Design, Oliver Juhas
 //
 
-
-
-
-
 // Setup language direction
 
-	$language_direction: rtl;
-
-
+$language_direction: rtl;
 
 // Imports
 
-	@import 'starter/tools/functions';
+@import "starter/tools/functions";
 
-	@import 'starter/setup/variables';
+@import "starter/setup/variables";
 
-	@import 'starter/tools/mixins';
+@import "starter/tools/mixins";
 
-	@import 'setup';
+@import "setup";
 
-	@import 'woocommerce/woocommerce';
+@import "woocommerce/woocommerce";

@@ -7,22 +7,16 @@
 // @copyright  WebMan Design, Oliver Juhas
 //
 
-
-
-
-
 // Setup language direction
 
-	$language_direction: rtl;
-
-
+$language_direction: rtl;
 
 // Imports
 
-	@import 'setup';
+@import "setup";
 
-	@import 'css-vars';
+@import "css-vars";
 
-	@import 'starter/__index';
+@import "starter/__index";
 
-	@import 'main/main';
+@import "main/main";

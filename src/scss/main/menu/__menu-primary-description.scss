@@ -4,35 +4,22 @@
 // Primary menu item description text
 //
 
-
-
-
-
 .menu-item-description {
-	@extend %menu_item_description;
+  @extend %menu_item_description;
 
+  // In top level menu items
 
+  @include media(map_get($breakpoint, "l")) {
+    .main-navigation-container .menu > ul > li > a & {
+      display: none;
+    }
+  }
 
-	// In top level menu items
+  // In megamenu label
 
-		@include media( map_get( $breakpoint, 'l' ) ) {
-
-			.main-navigation-container .menu > ul > li > a & {
-				display: none;
-			}
-
-		}
-
-
-
-	// In megamenu label
-
-		@include media( map_get( $breakpoint, 'l' ) ) {
-
-			.main-navigation-container .megamenu > ul > li > a & {
-				margin-bottom: $golden_major +em;
-			}
-
-		}
-
+  @include media(map_get($breakpoint, "l")) {
+    .main-navigation-container .megamenu > ul > li > a & {
+      margin-bottom: $golden_major + em;
+    }
+  }
 }

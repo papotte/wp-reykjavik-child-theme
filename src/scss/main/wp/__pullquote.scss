@@ -4,15 +4,9 @@
 // Pullquote
 //
 
-
-
-
-
 blockquote {
-
-	&.alignleft,
-	&.alignright {
-		margin-top: 0;
-	}
-
+  &.alignleft,
+  &.alignright {
+    margin-top: 0;
+  }
 }

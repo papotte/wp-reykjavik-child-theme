@@ -4,89 +4,73 @@
 // Search form
 //
 
-
-
-
-
 form[role="search"],
 .search-form {
+  .site & {
+    &::before {
+      @extend %genericon;
+      content: "\f400";
+      position: absolute;
+      width: pow($golden, 2) + rem;
+      height: 100%;
+      #{$right}: 0; // {{RTL}}
+      top: -0.05em;
+      margin: -2px 0;
+      text-align: center;
+      font-size: $golden + rem;
+      z-index: 1;
+    }
 
-	.site & {
+    [type="submit"],
+    .search-submit {
+      @include haf(("&", "h", "f", "a")) {
+        @extend %form_search_submit_button;
+      }
+    }
 
-		&::before {
-			@extend %genericon;
-			content: '\f400';
-			position: absolute;
-			width: pow( $golden, 2 ) +rem;
-			height: 100%;
-			#{$right}: 0; // {{RTL}}
-			top: -.05em;
-			margin: -2px 0;
-			text-align: center;
-			font-size: $golden +rem;
-			z-index: 1;
-		}
+    label {
+      font-size: 1em;
+    }
+  }
 
-		[type="submit"],
-		.search-submit {
+  .site .fl-builder-content .fl-module & [type="submit"] {
+    @include haf(("&", "h", "f", "a")) {
+      @extend %form_search_submit_button;
+    }
+  }
 
-			@include haf( ( '&', 'h', 'f', 'a' ) ) {
-				@extend %form_search_submit_button;
-			}
+  label {
+    // Label wraps the search input field and contains .screen-reader-text span
+    display: block;
+    padding: 0;
+  }
 
-		}
+  input[type="search"],
+  .search-field {
+    padding-#{$right}: pow($golden, 2) + rem; // {{RTL}}
+  }
 
-		label {
-			font-size: 1em;
-		}
+  // Form on search results page
 
-	}
-
-	.site .fl-builder-content .fl-module & [type="submit"] {
-
-		@include haf( ( '&', 'h', 'f', 'a' ) ) {
-			@extend %form_search_submit_button;
-		}
-
-	}
-
-	label {
-		// Label wraps the search input field and contains .screen-reader-text span
-		display: block;
-		padding: 0;
-	}
-
-	input[type="search"],
-	.search-field {
-		padding-#{$right}: pow( $golden, 2 ) +rem; // {{RTL}}
-	}
-
-
-
-	// Form on search results page
-
-		.search-results.no-widgets-sidebar .site-main & {
-			max-width: 70em;
-			margin-left: auto;
-			margin-right: auto;
-		}
-
+  .search-results.no-widgets-sidebar .site-main & {
+    max-width: 70em;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
-
-
 %form_search_submit_button {
-	position: absolute;
-	width: pow( $golden, 2 ) +rem;
-	height: 100%;
-	#{$right}: 0; // {{RTL}}
-	top: 0;
-	padding: 0;
-	text-indent: -999em;
-	background: none;
-	color: inherit;
-	border-width: 0;
-	box-shadow: none;
-	overflow: hidden;
-	z-index: 2;
+  position: absolute;
+  width: pow($golden, 2) + rem;
+  height: 100%;
+  #{$right}: 0; // {{RTL}}
+  top: 0;
+  padding: 0;
+  text-indent: -999em;
+  background: none;
+  color: inherit;
+  border-width: 0;
+  box-shadow: none;
+  overflow: hidden;
+  z-index: 2;
 }

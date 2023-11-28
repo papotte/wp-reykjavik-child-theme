@@ -10,18 +10,14 @@
 // @version  2.0.1
 //
 
-
-
-
-
 // Imports
 
-	@import 'setup';
+@import "setup";
 
-	@import 'starter/tools/functions';
+@import "starter/tools/functions";
 
-	@import 'starter/setup/variables';
+@import "starter/setup/variables";
 
-	@import 'starter/tools/mixins';
+@import "starter/tools/mixins";
 
-	@import 'woocommerce/woocommerce';
+@import "woocommerce/woocommerce";

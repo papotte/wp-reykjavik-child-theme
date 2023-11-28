@@ -1,32 +1,24 @@
 /* FILE: editor-block/blocks/_table.scss */
 
-@if ( index( $support__block, 'table' ) ) {
+@if (index($support__block, "table")) {
+  .wp-block-table {
+    th,
+    td {
+      padding: 0;
+      border-color: inherit;
+    }
 
-	.wp-block-table {
+    &__cell-content {
+      padding: ($golden_major + em) 1em;
+    }
+  }
 
-		th,
-		td {
-			padding: 0;
-			border-color: inherit;
-		}
-
-		&__cell-content {
-			padding: ( $golden_major +em ) 1em;
-		}
-
-	}
-
-	[data-type="core/table"] {
-
-		&[data-align="left"],
-		&[data-align="right"] {
-
-			.block-editor-block-list__block-edit {
-				max-width: $alignment_width;
-			}
-
-		}
-
-	}
-
+  [data-type="core/table"] {
+    &[data-align="left"],
+    &[data-align="right"] {
+      .block-editor-block-list__block-edit {
+        max-width: $alignment_width;
+      }
+    }
+  }
 }

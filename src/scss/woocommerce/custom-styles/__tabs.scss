@@ -4,19 +4,13 @@
 // Product tabs color styles
 //
 
-
-
-
-
 // Tabs
 
-	.woocommerce-tabs .tabs {
-
-		a:hover,
-		.active a,
-		.is-active a {
-			@extend %accent_colors;
-			border-color: transparent; //*
-		}
-
-	}
+.woocommerce-tabs .tabs {
+  a:hover,
+  .active a,
+  .is-active a {
+    @extend %accent_colors;
+    border-color: transparent; //*
+  }
+}

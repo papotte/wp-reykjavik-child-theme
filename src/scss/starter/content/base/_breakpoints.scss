@@ -18,18 +18,14 @@
 //
 
 body {
+  &::before {
+    // Using :before instead of ::before for compatibility
+    display: none; // Prevent from displaying
 
-	&::before { // Using :before instead of ::before for compatibility
-		display: none; // Prevent from displaying
-
-		@each $device, $width in $breakpoint {
-
-			@include media( $width ) {
-				content: 'device_#{$device}';
-			}
-
-		}
-
-	}
-
+    @each $device, $width in $breakpoint {
+      @include media($width) {
+        content: "device_#{$device}";
+      }
+    }
+  }
 }

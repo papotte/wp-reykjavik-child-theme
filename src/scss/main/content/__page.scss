@@ -4,13 +4,11 @@
 // Page styles
 //
 
-
 // Page content
 
 .page-header + .page-content {
-  margin-top: $golden +em;
+  margin-top: $golden + em;
 }
-
 
 // Special pages
 
@@ -18,50 +16,40 @@
 
 .error-404,
 .not-found {
-
   form {
     display: inline-block;
     width: percentage($golden_major);
 
     &::before {
-      padding: ($golden_minor +em) 0;
+      padding: ($golden_minor + em) 0;
       line-height: 1em + $golden_minor / 2;
     }
-
   }
-
 }
 
 .not-found {
-
   // There is a sidebar on this page
 
   form {
     width: 100%;
   }
-
 }
 
 .error404 {
-
   .page-content {
     margin-top: 1em;
   }
 
   form {
-
-    @include media(map_get($breakpoint, 'l')) {
+    @include media(map_get($breakpoint, "l")) {
       max-width: percentage($golden_major);
     }
 
-    @include media(map_get($breakpoint, 'xl')) {
+    @include media(map_get($breakpoint, "xl")) {
       max-width: percentage($golden_minor);
     }
-
   }
-
 }
-
 
 // Page templates
 
@@ -70,7 +58,6 @@
 .page-template-blank {
   padding: 0; // Remove any body padding on blank page template
 }
-
 
 // List child pages
 
@@ -88,25 +75,20 @@
     }
 
     &-inner:not(:empty) {
-      padding-bottom: pow( $golden, 2 ) +rem;
+      padding-bottom: pow($golden, 2) + rem;
     }
 
-    @include media(map_get($breakpoint, 'l')) {
-
+    @include media(map_get($breakpoint, "l")) {
       &-inner:not(:empty) {
         padding-bottom: $padding_vertical;
       }
-
     }
 
-    @include media(map_get($breakpoint, 'xl')) {
-
+    @include media(map_get($breakpoint, "xl")) {
       &:first-child {
         padding-top: $golden_major * $padding_vertical;
       }
-
     }
-
   }
 
   .entry-content:empty {
@@ -115,16 +97,12 @@
     + .list-child-pages-section {
       padding-top: $padding_vertical;
 
-      @include media(map_get($breakpoint, 'xl')) {
+      @include media(map_get($breakpoint, "xl")) {
         padding-top: $golden * $padding_vertical;
       }
-
     }
-
   }
-
 }
-
 
 // Child pages list
 
@@ -138,33 +116,29 @@
     clear: both;
     padding-bottom: $padding_vertical;
 
-    @include media(map_get($breakpoint, 'xl')) {
+    @include media(map_get($breakpoint, "xl")) {
       padding-bottom: $golden * $padding_vertical;
     }
 
     &:first-child {
       // What if child pages are above page content?
       padding-bottom: 0;
-      padding-top: pow( $golden, 2 ) +em;
+      padding-top: pow($golden, 2) + em;
 
-      @include media(map_get($breakpoint, 'l')) {
+      @include media(map_get($breakpoint, "l")) {
         padding-top: $padding_vertical;
       }
 
-      @include media(map_get($breakpoint, 'xl')) {
+      @include media(map_get($breakpoint, "xl")) {
         padding-top: $golden * $padding_vertical;
       }
-
     }
-
   }
 
   &-container {
     @extend %content_width;
   }
-
 }
-
 
 // Child page list item
 
@@ -173,26 +147,25 @@
   display: flex;
   flex-direction: column;
   width: calc(100% - 2em);
-  padding: $golden +em;
+  padding: $golden + em;
   margin: 1em;
   border-width: 1px;
   border-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: inherit;
 
-  @include media(map_get($breakpoint, 'm')) {
+  @include media(map_get($breakpoint, "m")) {
     width: calc(50% - 2em);
     padding: 2em;
   }
 
-  @include media(map_get($breakpoint, 'l')) {
+  @include media(map_get($breakpoint, "l")) {
     width: calc(33.33% - 2em);
 
     &:nth-child(1):nth-last-child(2),
     &:nth-child(2):nth-last-child(1) {
       width: calc(50% - 2em);
     }
-
   }
 
   .entry-summary {
@@ -203,13 +176,11 @@
     margin-bottom: 1em;
   }
 
-
   // Child page thumbnail
 
   &-image {
-    margin-bottom: pow( $golden, 2 ) +rem;
+    margin-bottom: pow($golden, 2) + rem;
   }
-
 
   // Child page title
 
@@ -218,12 +189,11 @@
     margin-bottom: $golden_minor + 1rem;
   }
 
-
   // More link
 
   .link-more {
     // The container
-    margin-top: $golden +em;
+    margin-top: $golden + em;
   }
 
   .more-link {
@@ -232,5 +202,4 @@
     display: inline-block;
     border-color: currentColor;
   }
-
 }

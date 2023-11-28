@@ -4,126 +4,104 @@
 // Text widget
 //
 
-
-
-
-
 $icon_size: 3.618em;
 
 .widget-text-media {
-	margin: 0 0 2rem;
-	line-height: 1;
+  margin: 0 0 2rem;
+  line-height: 1;
 
-	&-icon {
-		font-size: 1em; // Reset size inherited from `.h3` class.
+  &-icon {
+    font-size: 1em; // Reset size inherited from `.h3` class.
 
-		@include media( map_get( $breakpoint, 'l' ) ) {
-			float: $left; // {{RTL}}
-		}
+    @include media(map_get($breakpoint, "l")) {
+      float: $left; // {{RTL}}
+    }
 
-		.widget-symbol {
-			font-size: $icon_size;
+    .widget-symbol {
+      font-size: $icon_size;
 
-			@include media(
-				( map_get( $breakpoint, 'l' ), 'min-width' ),
-				( map_get( $breakpoint, 'xl' ), 'max-width' )
-			) {
-				font-size: $icon_size * $golden_major;
-			}
+      @include media(
+        (map_get($breakpoint, "l"), "min-width"),
+        (map_get($breakpoint, "xl"), "max-width")
+      ) {
+        font-size: $icon_size * $golden_major;
+      }
+    }
 
-		}
+    @include media((map_get($breakpoint, "l"), "max-width")) {
+      .widget-text-media-image + & {
+        float: $left; // {{RTL}}
+        margin-#{$right}: 1em; // {{RTL}}
+        margin-bottom: $golden_minor + em;
 
-		@include media( ( map_get( $breakpoint, 'l' ), 'max-width' ) ) {
-
-			.widget-text-media-image + & {
-				float: $left; // {{RTL}}
-				margin-#{$right}: 1em; // {{RTL}}
-				margin-bottom: $golden_minor +em;
-
-				.widget-symbol {
-					font-size: $golden +em;
-				}
-
-			}
-
-		}
-
-	}
-
+        .widget-symbol {
+          font-size: $golden + em;
+        }
+      }
+    }
+  }
 }
-
-
 
 .widget-text-content {
+  .widget-text-media-icon + & {
+    @include media(map_get($breakpoint, "l")) {
+      float: $right; // {{RTL}}
+      width: calc(100% - 1em - #{$icon_size * $golden_major});
+    }
 
-	.widget-text-media-icon + & {
+    @include media(map_get($breakpoint, "xl")) {
+      width: calc(100% - 2em - #{$icon_size});
+    }
+  }
 
-		@include media( map_get( $breakpoint, 'l' ) ) {
-			float: $right; // {{RTL}}
-			width: calc( 100% - 1em - #{ $icon_size * $golden_major } );
-		}
-
-		@include media( map_get( $breakpoint, 'xl' ) ) {
-			width: calc( 100% - 2em - #{ $icon_size } );
-		}
-
-	}
-
-	.widget-title,
-	.widgettitle {
-		margin-bottom: $golden_major +rem;
-	}
-
+  .widget-title,
+  .widgettitle {
+    margin-bottom: $golden_major + rem;
+  }
 }
 
-
-
 .textwidget {
-	@extend .clearfix;
+  @extend .clearfix;
 
-	ul {
-		margin-top: 0;
-		margin-bottom: 1em;
-		margin-#{$left}: $golden +em; // {{RTL}}
-		margin-#{$right}: 0; // {{RTL}}
-		list-style: square;
+  ul {
+    margin-top: 0;
+    margin-bottom: 1em;
+    margin-#{$left}: $golden + em; // {{RTL}}
+    margin-#{$right}: 0; // {{RTL}}
+    list-style: square;
 
-		&:last-child {
-			margin-bottom: 0;
-		}
+    &:last-child {
+      margin-bottom: 0;
+    }
 
-		ul {
-			border-width: 0;
-		}
+    ul {
+      border-width: 0;
+    }
 
-		li {
-			padding: 0;
-			border-width: 0;
+    li {
+      padding: 0;
+      border-width: 0;
 
-			+ li {
-				margin-top: 0;
-			}
+      + li {
+        margin-top: 0;
+      }
 
-			ul {
-				bottom: 0;
-				margin-bottom: 0;
-			}
+      ul {
+        bottom: 0;
+        margin-bottom: 0;
+      }
 
-			li {
-				padding: 0;
-			}
+      li {
+        padding: 0;
+      }
+    }
+  }
 
-		}
+  li a {
+    text-decoration: underline;
 
-	}
-
-	li a {
-		text-decoration: underline;
-
-		@include haf() {
-			text-decoration: none;
-		}
-
-	}
-
+    @include haf() {
+      text-decoration: none;
+    }
+  }
 }

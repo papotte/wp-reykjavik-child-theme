@@ -4,15 +4,10 @@
 // Verse
 //
 
-
-
-
-
 .wp-block-verse {
-	padding: 0;
+  padding: 0;
 
-	&::before {
-		display: none;
-	}
-
+  &::before {
+    display: none;
+  }
 }

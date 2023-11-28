@@ -4,14 +4,8 @@
 // Separator
 //
 
-
-
-
-
 .wp-block-separator {
-
-	&.is-style-dots::before {
-		opacity: .2;
-	}
-
+  &.is-style-dots::before {
+    opacity: 0.2;
+  }
 }

@@ -3,50 +3,52 @@
 .has-root-font-family,
 .has-global-font-family,
 body #{ $selector_editor_wrapper } {
-	font-family: var(--typography_fonts_text);
+  font-family: var(--typography_fonts_text);
 }
 
 %font_headings {
-	font-family: var(--typography_fonts_headings);
+  font-family: var(--typography_fonts_headings);
 }
 
-	.has-headings-font-family {
-		@extend %font_headings;
-	}
+.has-headings-font-family {
+  @extend %font_headings;
+}
 
 .has-site-title-font-family {
-	font-family: var(--typography_fonts_logo);
+  font-family: var(--typography_fonts_logo);
 }
 
 .has-inherited-font-family,
-.block-editor-default-block-appender textarea.block-editor-default-block-appender__content {
-	font-family: inherit;
+.block-editor-default-block-appender
+  textarea.block-editor-default-block-appender__content {
+  font-family: inherit;
 }
 
 body #{ $selector_editor_wrapper } {
-	line-height: $golden;
+  line-height: $golden;
 
-	@include media( map_get( $breakpoint, 's' ) ) {
-		font-size: var(--typography_size_html);
-	}
-
+  @include media(map_get($breakpoint, "s")) {
+    font-size: var(--typography_size_html);
+  }
 }
 
 %display_text_size {
-	margin-bottom: calc( #{ $golden } * #{ map_get( $customize_options, 'typography_size_html' ) } );
-	margin-bottom: calc( #{ $golden } * var(--typography_size_html) );
+  margin-bottom: calc(
+    #{$golden} * #{map_get($customize_options, "typography_size_html")}
+  );
+  margin-bottom: calc(#{$golden} * var(--typography_size_html));
 }
 
-	.editor-styles-wrapper {
-		@each $i, $size in $display_text_size {
-			.has-display-#{$i}-font-size {
-				@extend %display_text_size;
-				font-size: $size * ( $golden_major + $golden_minor / 2 / $i );
-				line-height: 1 + $golden_minor * 3 / 8 + $golden_minor / 2 / $i;
+.editor-styles-wrapper {
+  @each $i, $size in $display_text_size {
+    .has-display-#{$i}-font-size {
+      @extend %display_text_size;
+      font-size: $size * ($golden_major + $golden_minor / 2 / $i);
+      line-height: 1 + $golden_minor * 3 / 8 + $golden_minor / 2 / $i;
 
-				@include media( map_get( $breakpoint, 'l' ) ) {
-					font-size: $size;
-				}
-			}
-		}
-	}
+      @include media(map_get($breakpoint, "l")) {
+        font-size: $size;
+      }
+    }
+  }
+}

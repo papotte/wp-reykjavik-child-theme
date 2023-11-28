@@ -6,44 +6,33 @@
 // @see  https://wordpress.org/plugins/woocommerce-product-image-flipper/
 //
 
-
-
-
-
 .pif-has-gallery {
+  .products & {
+    .thumbnail {
+      position: relative;
+      overflow: hidden;
+    }
 
-	.products & {
+    img {
+      backface-visibility: hidden;
+      transition: opacity ($large_animation_speed + s);
 
-		.thumbnail {
-			position: relative;
-			overflow: hidden;
-		}
+      + img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+      }
+    }
 
-		img {
-			backface-visibility: hidden;
-			transition: opacity ( $large_animation_speed +s );
+    &:hover {
+      img {
+        opacity: 1;
+      }
 
-			+ img {
-				position: absolute;
-				top: 0;
-				left: 0;
-				opacity: 0;
-			}
-
-		}
-
-		&:hover {
-
-			img {
-				opacity: 1;
-			}
-
-			img:first-child {
-				opacity: 0;
-			}
-
-		}
-
-	}
-
+      img:first-child {
+        opacity: 0;
+      }
+    }
+  }
 }

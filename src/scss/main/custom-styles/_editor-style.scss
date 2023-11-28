@@ -6,15 +6,15 @@
 
 // Imports
 
-@import '_extenders';
+@import "_extenders";
 
-@import '_base';
+@import "_base";
 
-@import '_accent';
+@import "_accent";
 
-@import '_editor-typography';
+@import "_editor-typography";
 
-@import '_featured_link';
+@import "_featured_link";
 
 // Overrides and fixes for editor
 
@@ -27,7 +27,9 @@ html {
 
 html,
 html[lang] {
-  max-width: calc(#{ map_get( $customize_options, 'layout_width_content' ) } + 40px);
+  max-width: calc(
+    #{map_get($customize_options, "layout_width_content")} + 40px
+  );
   max-width: calc(var(--layout_width_content) + 40px);
 }
 
@@ -41,7 +43,9 @@ body {
   }
 
   &.page-template-sidebar {
-    padding-#{$right}: percentage($golden_minor) !important; // {{RTL}} // Unfortunately, have to use `!important` as default WP editor styles force paddings too...
+    padding-#{$right}: percentage(
+      $golden_minor
+    ) !important; // {{RTL}} // Unfortunately, have to use `!important` as default WP editor styles force paddings too...
   }
 
   *,
@@ -49,9 +53,7 @@ body {
   *::before {
     border-color: inherit;
   }
-
 }
-
 
 // Content colors
 
@@ -59,22 +61,18 @@ body {
   @extend %site_content_colors;
 }
 
-
 // Media player
 
 .mejs-container,
 .wp-playlist {
-
   body & {
     margin: 0 !important;
   }
-
 }
 
 .wpview-content {
-  margin: 0 0 ($golden +em);
+  margin: 0 0 ($golden + em);
 }
-
 
 // Tables
 
@@ -86,7 +84,6 @@ body {
   border-style: solid;
 }
 
-
 // Pullquotes
 
 blockquote.alignleft {
@@ -96,7 +93,6 @@ blockquote.alignleft {
 blockquote.alignright {
   margin-right: 0;
 }
-
 
 // Responsive media
 
@@ -121,7 +117,6 @@ video {
   width: 100% !important;
 }
 
-
 // Additional imports
 
-@import '_editor-layout-outdented';
+@import "_editor-layout-outdented";

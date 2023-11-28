@@ -4,34 +4,27 @@
 // Sidebar
 //
 
-
-
-
-
 // Theme sidebar styles
 
-	.sidebar {
-		@extend %font_size_smaller;
-		position: relative;
-		margin-top: pow( $golden, 2 ) +rem;
+.sidebar {
+  @extend %font_size_smaller;
+  position: relative;
+  margin-top: pow($golden, 2) + rem;
 
-		@include media( map_get( $breakpoint, 'l' ) ) {
-			width: percentage( ( 100 - $page_content_width - $page_content_gutter ) / 100 );
-			margin-top: 0;
-		}
+  @include media(map_get($breakpoint, "l")) {
+    width: percentage((100 - $page_content_width - $page_content_gutter) / 100);
+    margin-top: 0;
+  }
 
-		.widget {
-			margin-bottom: pow( 1 + $golden_minor, 4 ) +rem;
-		}
-
-	}
-
-
+  .widget {
+    margin-bottom: pow(1 + $golden_minor, 4) + rem;
+  }
+}
 
 // Imports
 
-	@import '_widgets';
+@import "_widgets";
 
-	@import '_intro';
+@import "_intro";
 
-	@import '_footer';
+@import "_footer";

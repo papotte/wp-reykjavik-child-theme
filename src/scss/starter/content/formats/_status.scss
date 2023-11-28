@@ -1,18 +1,13 @@
 /* FILE: starter/content/formats/_status.scss */
 
-@if ( index( $support__post_format, 'status' ) ) {
+@if (index($support__post_format, "status")) {
+  .format-status {
+    cursor: help;
 
-	.format-status {
-		cursor: help;
-
-		.entry-content {
-
-			a {
-				font-weight: bolder;
-			}
-
-		}
-
-	}
-
+    .entry-content {
+      a {
+        font-weight: bolder;
+      }
+    }
+  }
 }

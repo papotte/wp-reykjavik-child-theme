@@ -1,6 +1,6 @@
 {
   "name": "wp-reykjavik-child-theme",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Theme to modify Reykjavik to suit our purposes",
   "main": "gulpfile.js",
   "type": "module",
@@ -8,7 +8,8 @@
     "build": "gulp build",
     "copy": "gulp build && gulp copy-plugins",
     "start": "gulp build",
-    "package": "rm -rf src/assets/css && gulp build && gulp zip"
+    "package": "rm -rf src/assets/css && gulp build && gulp zip",
+    "format": "prettier --write \"src/**/*.scss\""
   },
   "repository": {
     "type": "git",
@@ -33,6 +34,7 @@
     "gulp-zip": "^6.0.0",
     "node-sass": "^9.0.0",
     "postcss-assets": "^6.0.0",
+    "prettier": "^3.1.0",
     "sass": "^1.69.5"
   }
 }

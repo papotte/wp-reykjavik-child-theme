@@ -4,28 +4,24 @@
 // Plugins colors
 //
 
-
-
-
-
 // Plugin: Jeptack
 
-	.site #infinite-handle span {
-		@extend %accent_colors;
-	}
+.site #infinite-handle span {
+  @extend %accent_colors;
+}
 
-	.site-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text) {
-		@extend %accent_background_color;
-	}
+.site-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text) {
+  @extend %accent_background_color;
+}
 
-	// !important overrides
+// !important overrides
 
-		.infinite-loader .spinner > div > div {
-			background-color: map_get( $customize_options, 'color_accent' ) !important;
-			background-color: var(--color_accent) !important;
-		}
+.infinite-loader .spinner > div > div {
+  background-color: map_get($customize_options, "color_accent") !important;
+  background-color: var(--color_accent) !important;
+}
 
-		.site-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text) {
-			color: map_get( $customize_options, 'color_accent_text' ) !important;
-			color: var(--color_accent_text) !important;
-		}
+.site-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text) {
+  color: map_get($customize_options, "color_accent_text") !important;
+  color: var(--color_accent_text) !important;
+}

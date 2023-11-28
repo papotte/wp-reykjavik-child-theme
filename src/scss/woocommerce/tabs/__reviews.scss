@@ -4,145 +4,129 @@
 // Tab: Reviews
 //
 
-
-
-
-
 .woocommerce-Reviews {
+  > div + div {
+    margin-top: pow($golden, 2) + em;
+  }
 
-	> div + div {
-		margin-top: pow( $golden, 2 ) +em;
-	}
+  .clear {
+    display: none;
+  }
 
-		.clear {
-			display: none;
-		}
+  &-title,
+  .comment-reply-title {
+    display: block; // For `.comment-reply-title`
 
-	&-title,
-	.comment-reply-title {
-		display: block; // For `.comment-reply-title`
+    span {
+      font-weight: 400;
+    }
+  }
 
-		span {
-			font-weight: 400;
-		}
+  .entry-subtitle {
+    display: none;
+  }
 
-	}
+  li {
+    padding: $golden + em;
 
-		.entry-subtitle {
-			display: none;
-		}
+    @include media(map_get($breakpoint, "l")) {
+      padding: 2em;
+    }
 
-	li {
-		padding: $golden +em;
+    &::before {
+      display: none;
+    }
+  }
 
-		@include media( map_get( $breakpoint, 'l' ) ) {
-			padding: 2em;
-		}
+  .avatar {
+    width: pow($golden, 2) + em;
+    margin-bottom: 1em;
 
-		&::before {
-			display: none;
-		}
+    @include media(map_get($breakpoint, "m")) {
+      float: $left; // {{RTL}}
+      margin-bottom: 0;
+    }
 
-	}
+    @include media(map_get($breakpoint, "l")) {
+      width: pow(1 + $golden_minor, 4) + em;
+    }
+  }
 
-	.avatar {
-		width: pow( $golden, 2 ) +em;
-		margin-bottom: 1em;
+  .star-rating {
+    margin-bottom: $golden_minor + em;
+  }
 
-		@include media( map_get( $breakpoint, 'm' ) ) {
-			float: $left; // {{RTL}}
-			margin-bottom: 0;
-		}
+  .meta {
+    margin-bottom: 1em;
+    font-size: 1em - $golden_minor / 2;
+  }
 
-		@include media( map_get( $breakpoint, 'l' ) ) {
-			width: pow( 1 + $golden_minor, 4 ) +em;
-		}
+  time {
+    opacity: 0.8;
+  }
 
-	}
+  .comment {
+    &list {
+      max-height: 18em;
+      max-height: 50vh;
+      border-width: 1px;
+      border-style: solid;
+      overflow-y: auto;
 
-	.star-rating {
-		margin-bottom: $golden_minor +em;
-	}
+      @include media((map_get($breakpoint, "s"), "max-height")) {
+        max-height: 75vh;
+      }
+    }
 
-	.meta {
-		margin-bottom: 1em;
-		font-size: 1em - $golden_minor / 2;
-	}
+    &-text {
+      @include media(map_get($breakpoint, "m")) {
+        margin-#{$left}: pow($golden, 2) + 1em; // {{RTL}}
+      }
 
-	time {
-		opacity: .8;
-	}
+      @include media(map_get($breakpoint, "l")) {
+        margin-#{$left}: pow(1 + $golden_minor, 4) + $golden + em; // {{RTL}}
+      }
+    }
 
-	.comment {
+    &-respond {
+      padding: 0;
+      margin: 0;
+    }
 
-		&list {
-			max-height: 18em;
-			max-height: 50vh;
-			border-width: 1px;
-			border-style: solid;
-			overflow-y: auto;
+    &-form {
+      margin: 0;
 
-			@include media( ( map_get( $breakpoint, 's' ), 'max-height' ) ) {
-				max-height: 75vh;
-			}
+      &-rating {
+        padding: ($golden_major + em) 1em;
+        margin-bottom: $golden + em;
+        overflow: hidden;
+        border-width: 2px;
+        border-style: solid;
 
-		}
+        label {
+          float: $left; // {{RTL}}
+          margin-#{$right}: 1em; // {{RTL}}
+          font-size: 1em - $golden_minor / 4;
+        }
+      }
 
-		&-text {
+      textarea {
+        height: pow(1 + $golden_minor, 5) + em;
+      }
 
-			@include media( map_get( $breakpoint, 'm' ) ) {
-				margin-#{$left}: pow( $golden, 2 ) + 1em; // {{RTL}}
-			}
+      .form-submit {
+        clear: both;
+        margin: 0;
+      }
 
-			@include media( map_get( $breakpoint, 'l' ) ) {
-				margin-#{$left}: pow( 1 + $golden_minor, 4 ) + $golden +em; // {{RTL}}
-			}
-
-		}
-
-		&-respond {
-			padding: 0;
-			margin: 0;
-		}
-
-		&-form {
-			margin: 0;
-
-			&-rating {
-				padding: ( $golden_major +em ) 1em;
-				margin-bottom: $golden +em;
-				overflow: hidden;
-				border-width: 2px;
-				border-style: solid;
-
-				label {
-					float: $left; // {{RTL}}
-					margin-#{$right}: 1em; // {{RTL}}
-					font-size: 1em - $golden_minor / 4;
-				}
-
-			}
-
-			textarea {
-				height: pow( 1 + $golden_minor, 5 ) +em;
-			}
-
-			.form-submit {
-				clear: both;
-				margin: 0;
-			}
-
-			[type="submit"] {
-				width: 100%;
-			}
-
-		}
-
-	}
-
+      [type="submit"] {
+        width: 100%;
+      }
+    }
+  }
 }
 
 .commentlist {
-	margin-#{$left}: 0; // {{RTL}}
-	list-style: none;
+  margin-#{$left}: 0; // {{RTL}}
+  list-style: none;
 }

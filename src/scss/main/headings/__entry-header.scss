@@ -4,77 +4,64 @@
 // Entry header title
 //
 
-
-
-
-
 // Entry header
 
-	.entry-header {
-		margin-bottom: pow( $golden, 2 ) +rem;
+.entry-header {
+  margin-bottom: pow($golden, 2) + rem;
 
-		@include media( map_get( $breakpoint, 'l' ) ) {
-			margin-bottom: pow( 1 + $golden_minor, 4 ) +rem;
-		}
+  @include media(map_get($breakpoint, "l")) {
+    margin-bottom: pow(1 + $golden_minor, 4) + rem;
+  }
 
-		.posts & {
-			margin-bottom: $golden +em;
-		}
+  .posts & {
+    margin-bottom: $golden + em;
+  }
 
-		.page .site-main > .entry > &,
-		.single.has-intro .site-main > .entry > & {
-			@extend %screen_reader_hiding;
-		}
-
-	}
-
-
+  .page .site-main > .entry > &,
+  .single.has-intro .site-main > .entry > & {
+    @extend %screen_reader_hiding;
+  }
+}
 
 // Entry & Page title
 
-	.entry-title,
-	.page-title {
-		@extend %break_words;
-		padding: 0;
-		margin: 0 0 ( pow( $golden, 2 ) +rem );
+.entry-title,
+.page-title {
+  @extend %break_words;
+  padding: 0;
+  margin: 0 0 (pow($golden, 2) + rem);
 
-		&:hover{
-			color: var(--color_accent);
-		}
-		
-		// Paginated title suffix
+  &:hover {
+    color: var(--color_accent);
+  }
 
-			small {
-				@extend %font_weight_400;
-				display: block;
-				margin-top: $golden_minor +rem;
+  // Paginated title suffix
 
-				@include media( map_get( $breakpoint, 'm' ) ) {
-					$pagination_suffix_font_size: .5; // In em.
-					display: inline-block;
-					margin-top: ( 1 - $pagination_suffix_font_size ) / $pagination_suffix_font_size +em;
-					margin-#{$left}: $golden_minor +rem; // {{RTL}}
-					font-size: $pagination_suffix_font_size +em;
-					vertical-align: top;
-				}
+  small {
+    @extend %font_weight_400;
+    display: block;
+    margin-top: $golden_minor + rem;
 
-			}
-
-	}
-
-
+    @include media(map_get($breakpoint, "m")) {
+      $pagination_suffix_font_size: 0.5; // In em.
+      display: inline-block;
+      margin-top: (1 - $pagination_suffix_font_size) /
+        $pagination_suffix_font_size + em;
+      margin-#{$left}: $golden_minor + rem; // {{RTL}}
+      font-size: $pagination_suffix_font_size + em;
+      vertical-align: top;
+    }
+  }
+}
 
 // Search results title
 
-	.page-title {
+.page-title {
+  .search-results & {
+    @extend %font_weight_300;
 
-		.search-results & {
-			@extend %font_weight_300;
-
-			span {
-				@extend %font_weight_700;
-			}
-
-		}
-
-	}
+    span {
+      @extend %font_weight_700;
+    }
+  }
+}

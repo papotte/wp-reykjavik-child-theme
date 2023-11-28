@@ -4,22 +4,14 @@
 // Page: My Account -> Addresses -> Edit
 //
 
-
-
-
-
 .woocommerce-address {
+  &-fields {
+    > * + * {
+      margin-top: $golden + em;
+    }
 
-	&-fields {
-
-		> * + * {
-			margin-top: $golden +em;
-		}
-
-		&__field-wrapper {
-			@extend %wc_clearfix;
-		}
-
-	}
-
+    &__field-wrapper {
+      @extend %wc_clearfix;
+    }
+  }
 }

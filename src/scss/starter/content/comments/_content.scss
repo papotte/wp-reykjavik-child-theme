@@ -1,24 +1,21 @@
 /* FILE: starter/content/comments/_content.scss */
 
 .comment-content {
-	@extend .clearfix;
+  @extend .clearfix;
 
-	a {
-		@extend %break_words;
-	}
+  a {
+    @extend %break_words;
+  }
 
-	p,
-	blockquote,
-	table {
-		margin-bottom: 1em;
-	}
-
+  p,
+  blockquote,
+  table {
+    margin-bottom: 1em;
+  }
 }
 
 .comment {
-
-	.reply {
-		@extend %font_size_small;
-	}
-
+  .reply {
+    @extend %font_size_small;
+  }
 }

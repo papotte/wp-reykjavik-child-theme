@@ -4,116 +4,94 @@
 // Intro title on shop pages
 //
 
-
-
-
-
 // Intro title section
 
-	.has-intro {
+.has-intro {
+  .site-main {
+    > .page-title {
+      @extend %wc_screen_reader_hiding;
+    }
 
-		.site-main {
-
-			> .page-title {
-				@extend %wc_screen_reader_hiding;
-			}
-
-			.term-description {
-				display: none;
-			}
-
-		}
-
-	}
-
-
+    .term-description {
+      display: none;
+    }
+  }
+}
 
 // Breadcrumbs
 
-	.woocommerce-breadcrumb {
-		margin-bottom: $golden_major +em;
-		text-transform: uppercase;
-		font-size: 1em - $golden_minor / 2;
-		color: inherit;
+.woocommerce-breadcrumb {
+  margin-bottom: $golden_major + em;
+  text-transform: uppercase;
+  font-size: 1em - $golden_minor / 2;
+  color: inherit;
 
-		a {
-			text-decoration: none;
-			color: inherit;
+  a {
+    text-decoration: none;
+    color: inherit;
 
-			@include haf() {
-				text-decoration: underline;
-			}
+    @include haf() {
+      text-decoration: underline;
+    }
+  }
 
-		}
+  &-item:last-child {
+    display: none;
+  }
 
-		&-item:last-child {
-			display: none;
-		}
-
-		&-delimiter {
-			margin: 0 ( $golden_minor +em );
-		}
-
-	}
-
-
+  &-delimiter {
+    margin: 0 ($golden_minor + em);
+  }
+}
 
 // Title & price container
 
-	.product-title-price {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		align-items: baseline;
+.product-title-price {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
 
+  .intro-title {
+    flex: 0 1 auto;
+  }
 
+  .price {
+    flex: 0 1 auto;
+    margin: 1rem 0 0;
+    font-size: pow(1 + $golden_minor, 2) + em;
+    font-weight: 300;
 
-		.intro-title {
-			flex: 0 1 auto;
-		}
+    @include media(map_get($breakpoint, "l")) {
+      margin-top: 0;
+      text-align: $right; // {{RTL}}
+    }
+  }
 
+  .amount {
+    font-weight: 400;
 
+    &-separator {
+      font-weight: inherit;
+    }
+  }
 
-		.price {
-			flex: 0 1 auto;
-			margin: 1rem 0 0;
-			font-size: pow( 1 + $golden_minor, 2 ) +em;
-			font-weight: 300;
+  del {
+    font-size: inherit;
+    margin-#{$right}: $golden_minor + em; // {{RTL}}
 
-			@include media( map_get( $breakpoint, 'l' ) ) {
-				margin-top: 0;
-				text-align: $right; // {{RTL}}
-			}
+    .amount {
+      font-weight: 300;
+    }
+  }
 
-		}
+  ins {
+    text-decoration: none;
+  }
 
-		.amount {
-			font-weight: 400;
-
-			&-separator {
-				font-weight: inherit;
-			}
-
-		}
-
-		del {
-			font-size: inherit;
-			margin-#{$right}: $golden_minor +em; // {{RTL}}
-
-			.amount {
-				font-weight: 300;
-			}
-
-		}
-
-		ins {
-			text-decoration: none;
-		}
-
-		.woocommerce-price-suffix {
-			line-height: 1;
-			font-size: .5em;
-			white-space: nowrap;
-		}
-
-	}
+  .woocommerce-price-suffix {
+    line-height: 1;
+    font-size: 0.5em;
+    white-space: nowrap;
+  }
+}

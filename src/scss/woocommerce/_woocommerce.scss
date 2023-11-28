@@ -17,24 +17,20 @@
 //   The class is also applied on WooCommerce shortcodes and widgets.
 //
 
-
-
-
-
 // Imports
 
-	@import '_helpers';
+@import "_helpers";
 
-	@import 'main/main';
+@import "main/main";
 
-	@import 'tabs/tabs';
+@import "tabs/tabs";
 
-	@import 'pages/pages';
+@import "pages/pages";
 
-	@import 'shortcodes/shortcodes';
+@import "shortcodes/shortcodes";
 
-	@import 'sidebar/sidebar';
+@import "sidebar/sidebar";
 
-	@import 'extensions/extensions';
+@import "extensions/extensions";
 
-	@import 'blocks/_index';
+@import "blocks/_index";

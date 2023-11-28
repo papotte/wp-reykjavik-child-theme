@@ -2,9 +2,7 @@
 
 .widget .current-menu-item,
 .widget .current_page_item {
-
-	> a {
-		@extend %font_weight_700;
-	}
-
+  > a {
+    @extend %font_weight_700;
+  }
 }

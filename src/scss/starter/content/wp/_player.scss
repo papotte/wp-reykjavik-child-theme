@@ -1,32 +1,30 @@
 /* FILE: starter/content/wp/_player.scss */
 
 .mejs-container {
-	margin-bottom: $golden +em;
+  margin-bottom: $golden + em;
 
-	&:last-child {
-		margin-bottom: 0;
-	}
-
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .wp-video .mejs-container,
 .wp-video-playlist .mejs-container {
-	@extend %video_container;
+  @extend %video_container;
 
-	.mejs-inner {
-		@extend %video_object;
-	}
-
+  .mejs-inner {
+    @extend %video_object;
+  }
 }
 
 .posts .mejs-container {
-	min-width: 0 $important; // Overriding inline element styles.
+  min-width: 0 $important; // Overriding inline element styles.
 }
 
 .entry-media .mejs-container a {
-	width: auto;
+  width: auto;
 }
 
 .entry-media .mejs-container .mejs-horizontal-volume-slider {
-	width: 56px;
+  width: 56px;
 }

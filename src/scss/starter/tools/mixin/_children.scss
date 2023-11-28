@@ -24,16 +24,18 @@
 // @param  int    $count    Number of children in container.
 // @param  int    $min      Optional starting number of children in container.
 //
-@mixin children( $selector, $count: 2, $min: 1 ) {
+@mixin children($selector, $count: 2, $min: 1) {
+  $selectors: ();
 
-	$selectors: ();
+  @for $i from $min through $count {
+    $selectors: append(
+      $selectors,
+      "#{$selector}:nth-child(#{$i}):nth-last-child(#{ $count + 1 - $i })",
+      comma
+    );
+  }
 
-	@for $i from $min through $count {
-		$selectors: append( $selectors, '#{$selector}:nth-child(#{$i}):nth-last-child(#{ $count + 1 - $i })', comma );
-	}
-
-	@at-root #{$selectors} {
-		@content;
-	}
-
+  @at-root #{$selectors} {
+    @content;
+  }
 } // /children

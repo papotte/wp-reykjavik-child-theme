@@ -4,14 +4,10 @@
 // Sidebars and widgets color styles
 //
 
-
-
-
-
 // Widgets
 
-	// Layered Nav Filters
+// Layered Nav Filters
 
-		.widget_layered_nav_filters a {
-			@extend %accent_colors;
-		}
+.widget_layered_nav_filters a {
+  @extend %accent_colors;
+}

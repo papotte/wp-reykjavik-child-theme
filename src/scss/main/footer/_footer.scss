@@ -6,46 +6,59 @@
 // For footer widgets see `sidebar` section.
 //
 
-
-
-
-
 // Footer
 
-	.site-footer {
-		@extend %font_size_smaller;
-		@extend .clearfix;
-		position: relative;
+.site-footer {
+  @extend %font_size_smaller;
+  @extend .clearfix;
+  position: relative;
 
-		&-area {
+  &-area {
+    &-inner {
+      @extend %content_width;
+      position: relative; // Above footer image;
 
-			&-inner {
-				@extend %content_width;
-				position: relative; // Above footer image;
+      .footer-layout-fullwidth & {
+        @extend %full_width;
+      }
+    }
+  }
 
-				.footer-layout-fullwidth & {
-					@extend %full_width;
-				}
+  // Footer background image
 
-			}
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}
 
-		}
+.set-colors-footer,
+.set-colors-footer > .fl-col-content,
+.set-colors-footer > .fl-row-content-wrap,
+.site-footer {
+  background-color: #351b7e;
+  color: #d3d3d4;
+  border-color: rgba(211, 211, 212, 0.2);
+  background-color: var(--color_footer_background);
+  color: var(--color_footer_text);
+  border-color: var(--color_footer_text--a20);
 
-
-
-		// Footer background image
-
-			&::before {
-				content: '';
-				position: absolute;
-				width: 100%;
-				height: 100%;
-			}
-
-	}
-
-
+  .accent-color,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  a,
+  h2,
+  h3,
+  h4 {
+    color: #fefeff;
+    color: var(--color_footer_headings);
+  }
+}
 
 // Imports
 
-	@import '_site-info';
+@import "_site-info";

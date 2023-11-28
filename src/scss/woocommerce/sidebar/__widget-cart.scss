@@ -4,95 +4,81 @@
 // Widget: Cart
 //
 
-
-
-
-
 .widget_shopping_cart {
+  &_content {
+    display: flex;
+    flex-direction: column;
+  }
 
-	&_content {
-		display: flex;
-		flex-direction: column;
-	}
+  .product_list_widget {
+    .sidebar & {
+      @include media(map_get($breakpoint, "l")) {
+        max-height: 50vh;
+        overflow-y: auto;
+      }
+    }
 
-	.product_list_widget {
+    li {
+      padding: ($golden_major + rem) 0;
+    }
+  }
 
-		.sidebar & {
+  .remove {
+    @extend %wc_indent_text_for_icon_only;
+    float: $right; // {{RTL}}
+    margin-#{$left}: $golden_minor + em; // {{RTL}}
+    line-height: 1;
+    font-size: 1rem;
 
-			@include media( map_get( $breakpoint, 'l' ) ) {
-				max-height: 50vh;
-				overflow-y: auto;
-			}
+    &::before {
+      content: "\f405";
+    }
+  }
 
-		}
+  .quantity {
+    display: block;
+    color: inherit;
+    opacity: 0.66;
+  }
 
-		li {
-			padding: ( $golden_major +rem ) 0;
-		}
+  .total {
+    padding: ($golden + em) 0 0;
+    margin: ($golden + em) 0 0;
+    border-top: 4px double;
+    overflow: hidden;
 
-	}
+    strong {
+      text-transform: uppercase;
+      font-weight: 400;
+    }
 
-	.remove {
-		@extend %wc_indent_text_for_icon_only;
-		float: $right; // {{RTL}}
-		margin-#{$left}: $golden_minor +em; // {{RTL}}
-		line-height: 1;
-		font-size: 1rem;
+    .amount {
+      float: $right; // {{RTL}}
+      margin-#{$left}: $golden_minor + em; // {{RTL}}
+      line-height: 1;
+      font-size: $golden_minor / 2 + 1em;
+    }
+  }
 
-		&::before {
-			content: '\f405';
-		}
+  .button {
+    display: block;
 
-	}
+    &s {
+      order: -10;
+      margin-bottom: $golden + em;
 
-	.quantity {
-		display: block;
-		color: inherit;
-		opacity: .66;
-	}
+      .sidebar & {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-left: -0.5rem;
+        margin-right: -0.5rem;
+      }
+    }
 
-	.total {
-		padding: ( $golden +em ) 0 0;
-		margin: ( $golden +em ) 0 0;
-		border-top: 4px double;
-		overflow: hidden;
-
-		strong {
-			text-transform: uppercase;
-			font-weight: 400;
-		}
-
-		.amount {
-			float: $right; // {{RTL}}
-			margin-#{$left}: $golden_minor +em; // {{RTL}}
-			line-height: 1;
-			font-size: $golden_minor / 2 + 1em;
-		}
-
-	}
-
-	.button {
-		display: block;
-
-		&s {
-			order: -10;
-			margin-bottom: $golden +em;
-
-			.sidebar & {
-				display: flex;
-				flex-wrap: wrap;
-				justify-content: space-between;
-				margin-left: -.5rem;
-				margin-right: -.5rem;
-			}
-
-		}
-
-		.sidebar & {
-			flex: 1 1 auto;
-			margin: .5rem;
-		}
-
-	}
-
+    .sidebar & {
+      flex: 1 1 auto;
+      margin: 0.5rem;
+    }
+  }
 }

@@ -8,18 +8,15 @@
 //
 // @param  mixed $number
 //
-@function strip_unit( $number ) {
+@function strip_unit($number) {
+  // Processing
 
-	// Processing
+  @if "number" == type-of($number) and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+    // Yes, weird, but `$number * 0` can not be removed...
+  }
 
-		@if 'number' == type-of( $number ) and not unitless( $number ) {
-			@return $number / ( $number * 0 + 1 );
-			// Yes, weird, but `$number * 0` can not be removed...
-		}
+  // Output
 
-
-	// Output
-
-		@return $number;
-
+  @return $number;
 } // /strip_unit

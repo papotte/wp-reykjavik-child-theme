@@ -4,179 +4,155 @@
 // Single product page tabs
 //
 
-
-
-
-
 .woocommerce-tabs {
-	clear: both;
+  clear: both;
 
-	@include media( map_get( $breakpoint, 'l' ) ) {
-		margin-top: pow( $golden, 2 ) * -1em;
-	}
+  @include media(map_get($breakpoint, "l")) {
+    margin-top: pow($golden, 2) * -1em;
+  }
 
-	[tabindex="-1"]:focus {
-		outline: 0;
-	}
+  [tabindex="-1"]:focus {
+    outline: 0;
+  }
 
+  // Tabs list
 
+  .tabs {
+    @extend %wc_content_width;
+    padding: 0.5em;
+    line-height: $golden_minor / 2 + 1;
+    list-style: none;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
 
-	// Tabs list
+    @include media((map_get($breakpoint, "l"), "max-width")) {
+      display: none;
+    }
 
-		.tabs {
-			@extend %wc_content_width;
-			padding: .5em;
-			line-height: $golden_minor / 2 + 1;
-			list-style: none;
-			text-align: center;
-			border-width: 1px;
-			border-style: solid;
+    li {
+      display: inline-block;
+      padding: 0.5em;
+      margin: 0;
+      border-width: 0;
+    }
 
-			@include media( ( map_get( $breakpoint, 'l' ), 'max-width' ) ) {
-				display: none;
-			}
+    a {
+      display: inline-block;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 1em - $golden_minor / 2;
+      font-weight: 700;
+      color: inherit;
+      transition:
+        background ($small_animation_speed + s),
+        color ($small_animation_speed + s);
 
-			li {
-				display: inline-block;
-				padding: .5em;
-				margin: 0;
-				border-width: 0;
-			}
+      &:hover {
+        text-decoration: none;
+      }
 
-			a {
-				display: inline-block;
-				padding: 1rem 2rem;
-				text-decoration: none;
-				text-transform: uppercase;
-				font-size: 1em - $golden_minor / 2;
-				font-weight: 700;
-				color: inherit;
-				transition: background ( $small_animation_speed +s ),
-				            color ( $small_animation_speed +s );
+      &::before {
+        @extend %wc_genericon;
+        content: "\f455"; // Default "info" icon
+        display: inline-block;
+        margin-#{$right}: $golden_major + em; // {{RTL}}
+        line-height: $golden_major;
+        font-size: $golden + em;
+        vertical-align: middle;
+      }
 
-				&:hover {
-					text-decoration: none;
-				}
+      &[href="#tab-description"]::before {
+        content: "\f100";
+      }
 
-				&::before {
-					@extend %wc_genericon;
-					content: '\f455'; // Default "info" icon
-					display: inline-block;
-					margin-#{$right}: $golden_major +em; // {{RTL}}
-					line-height: $golden_major;
-					font-size: $golden +em;
-					vertical-align: middle;
-				}
+      &[href="#tab-reviews"]::before {
+        content: "\f408";
+      }
 
-				&[href="#tab-description"]::before {
-					content: '\f100';
-				}
+      &[href="#tab-upsells"]::before {
+        content: "\f461";
+      }
+    }
+  }
 
-				&[href="#tab-reviews"]::before {
-					content: '\f408';
-				}
+  // Panels
 
-				&[href="#tab-upsells"]::before {
-					content: '\f461';
-				}
+  .panel {
+    @extend %wc_content_width;
+    padding: ($padding_vertical * $golden_major) 0 $padding_vertical;
 
-			}
+    &:focus {
+      outline: 0;
+    }
 
-		}
+    @include media((map_get($breakpoint, "l"), "max-width")) {
+      display: block !important;
+      width: 100%;
+      padding-left: 6%;
+      padding-right: 6%;
+      border-top-width: 1px;
+      border-top-style: solid;
+    }
 
+    @include media(map_get($breakpoint, "l")) {
+      padding-top: $padding_vertical * ($golden_major + $golden_minor / 2);
 
+      .site & {
+        max-width: 36em;
+      }
+    }
 
-	// Panels
+    @include media(map_get($breakpoint, "xl")) {
+      padding-top: $padding_vertical;
+      padding-bottom: $golden_major * $padding_vertical / 2 + $padding_vertical;
+    }
 
-		.panel {
-			@extend %wc_content_width;
-			padding: ( $padding_vertical * $golden_major ) 0 $padding_vertical;
+    > h2:first-child {
+      @extend %wc_panel_title;
+    }
+  }
 
-			&:focus {
-				outline: 0;
-			}
+  // Only 1 tab to select
 
-			@include media( ( map_get( $breakpoint, 'l' ), 'max-width' ) ) {
-				display: block !important;
-				width: 100%;
-				padding-left: 6%;
-				padding-right: 6%;
-				border-top-width: 1px;
-				border-top-style: solid;
-			}
+  &.tabs-count-1 {
+    margin-top: 0;
 
-			@include media( map_get( $breakpoint, 'l' ) ) {
-				padding-top: $padding_vertical * ( $golden_major + $golden_minor / 2 );
+    .tabs {
+      display: none;
+    }
 
-				.site & {
-					max-width: 36em;
-				}
-
-			}
-
-			@include media( map_get( $breakpoint, 'xl' ) ) {
-				padding-top: $padding_vertical;
-				padding-bottom: $golden_major * $padding_vertical / 2 + $padding_vertical;
-			}
-
-			> h2:first-child {
-				@extend %wc_panel_title;
-			}
-
-		}
-
-
-
-	// Only 1 tab to select
-
-		&.tabs-count-1 {
-			margin-top: 0;
-
-			.tabs {
-				display: none;
-			}
-
-			.panel {
-
-				@include media( map_get( $breakpoint, 'l' ) ) {
-					padding-top: 0;
-				}
-
-			}
-
-		}
-
+    .panel {
+      @include media(map_get($breakpoint, "l")) {
+        padding-top: 0;
+      }
+    }
+  }
 }
-
-
 
 // Extenders
 
-	%wc_panel_title {
+%wc_panel_title {
+  @include media(map_get($breakpoint, "l")) {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    line-height: 1px;
+    overflow: hidden;
 
-		@include media( map_get( $breakpoint, 'l' ) ) {
-			clip: rect( 1px, 1px, 1px, 1px );
-			clip-path: inset( 50% );
-			position: absolute !important;
-			width: 1px;
-			height: 1px;
-			line-height: 1px;
-			overflow: hidden;
-
-			& + * {
-				margin-top: 0;
-			}
-
-		}
-
-	}
-
-
+    & + * {
+      margin-top: 0;
+    }
+  }
+}
 
 // Imports
 
-	@import '_description';
+@import "_description";
 
-	@import '_additional-information';
+@import "_additional-information";
 
-	@import '_reviews';
+@import "_reviews";

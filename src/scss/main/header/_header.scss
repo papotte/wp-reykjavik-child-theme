@@ -4,61 +4,51 @@
 // Site header
 //
 
-
-
-
-
 // Site header
 
-	.site-header {
-		@extend .clearfix;
-		display: flex;
-		flex-direction: column;
+.site-header {
+  @extend .clearfix;
+  display: flex;
+  flex-direction: column;
 
-		> div {
-			flex: 0 1 auto;
-		}
+  > div {
+    flex: 0 1 auto;
+  }
 
-		&-content {
-			padding-top: $golden +em;
-			padding-bottom: $golden +em;
-			border-bottom-width: 1px;
-			border-bottom-style: solid;
-		}
+  &-content {
+    padding-top: $golden + em;
+    padding-bottom: $golden + em;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+  }
 
-		&-inner {
-			@extend .clearfix;
-			@extend %content_width;
-			display: flex;
-			flex-wrap: wrap;
-			align-items: center;
-			position: relative;
+  &-inner {
+    @extend .clearfix;
+    @extend %content_width;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
 
-			.header-layout-fullwidth & {
-				@extend %full_width;
-			}
+    .header-layout-fullwidth & {
+      @extend %full_width;
+    }
 
-			> div,
-			> nav {
-				flex: 0 1 auto;
-			}
+    > div,
+    > nav {
+      flex: 0 1 auto;
+    }
+  }
 
-		}
-
-		a {
-
-			&:not(.button) {
-				color: inherit;
-			}
-
-		}
-
-	}
-
-
+  a {
+    &:not(.button) {
+      color: inherit;
+    }
+  }
+}
 
 // Imports
 
-	@import '_branding';
+@import "_branding";
 
-	@import '_intro';
+@import "_intro";

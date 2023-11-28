@@ -1,24 +1,18 @@
 /* FILE: starter/content/wp/blocks/_quote.scss */
 
-@if ( index( $support__block, 'quote' ) ) {
+@if (index($support__block, "quote")) {
+  .wp-block-quote {
+    &.is-style-large {
+      p {
+        line-height: inherit;
+        font-size: 1.272em;
+        font-style: inherit;
+      }
 
-	.wp-block-quote {
-
-		&.is-style-large {
-
-			p {
-				line-height: inherit;
-				font-size: 1.272em;
-				font-style: inherit;
-			}
-
-			cite {
-				@extend %font_size_small;
-				text-align: inherit;
-			}
-
-		}
-
-	}
-
+      cite {
+        @extend %font_size_small;
+        text-align: inherit;
+      }
+    }
+  }
 }

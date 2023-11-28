@@ -4,28 +4,26 @@
 // Navigational menus styles
 //
 
-
-
-
-
 // Expanders
 
-	%menu_item_description {
-		@extend %font_size_small;
-		@extend %font_style_italic;
-		display: block;
-		max-width: 20em;
-		margin-top: $golden_minor +em;
-		white-space: normal;
-		opacity: .8;
-	}
-
-
+%menu_item_description {
+  @extend %font_size_small;
+  @extend %font_style_italic;
+  display: block;
+  max-width: 20em;
+  margin-top: $golden_minor + em;
+  white-space: normal;
+  opacity: 0.8;
+}
 
 // Imports
 
-	@import '_menu-primary';
+@import "_menu-primary";
 
-	@import '_menu-secondary';
+@import "_menu-secondary";
 
-	@import '_menu-social';
+@import "_menu-social";
+
+.menu-skip-links {
+  display: none;
+}

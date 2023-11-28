@@ -4,8 +4,8 @@
 // Posts list default layout styles
 //
 
-.posts-layout-list, .posts-list {
-
+.posts-layout-list,
+.posts-list {
   .posts {
     display: block;
     margin: 0;
@@ -21,13 +21,11 @@
       .no-widgets-sidebar & {
         width: 100%;
       }
-
     }
-
   }
 
-
-  .type-post, .type-podcast {
+  .type-post,
+  .type-podcast {
     @extend .clearfix;
 
     .entry {
@@ -43,7 +41,6 @@
       }
 
       &-content {
-
       }
 
       &-meta {
@@ -53,11 +50,7 @@
           display: inline-block;
           margin-#{$right}: 0; // {{RTL}}
         }
-
       }
-
     }
-
   }
-
 }

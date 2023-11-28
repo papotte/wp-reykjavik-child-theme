@@ -8,22 +8,23 @@
 // @param  string $replace
 // @param  string $subject
 //
-@function str_replace( $search, $replace, $subject ) {
+@function str_replace($search, $replace, $subject) {
+  // Variables
 
-	// Variables
+  $index: str-index($subject, $search);
 
-		$index: str-index( $subject, $search );
+  // Processing
 
+  @if $index {
+    @return str-slice($subject, 1, $index - 1) + $replace +
+      str_replace(
+        $search,
+        $replace,
+        str-slice($subject, $index + str-length($search))
+      );
+  }
 
-	// Processing
+  // Output
 
-		@if $index {
-			@return str-slice( $subject, 1, $index - 1 ) + $replace + str_replace( $search, $replace, str-slice( $subject, $index + str-length( $search ) ) );
-		}
-
-
-	// Output
-
-		@return $subject;
-
+  @return $subject;
 } // /str_replace

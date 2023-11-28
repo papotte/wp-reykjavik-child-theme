@@ -1,62 +1,54 @@
 /* FILE: editor-block/blocks/_cover.scss */
 
-@if ( index( $support__block, 'cover' ) ) {
+@if (index($support__block, "cover")) {
+  .wp-block-cover {
+    h2,
+    h3,
+    h4 {
+      color: inherit;
+    }
 
-	.wp-block-cover {
+    .wp-block &__inner-container,
+    .wp-block & .wp-block-cover__inner-container {
+      max-width: calc(24em + var(--block_ui_margin) + var(--block_ui_margin));
+    }
 
-		h2, h3, h4 {
-			color: inherit;
-		}
+    &.has-alignwide-content .wp-block-cover__inner-container {
+      max-width: calc(70em + var(--block_ui_margin) + var(--block_ui_margin));
+    }
 
-		.wp-block &__inner-container,
-		.wp-block & .wp-block-cover__inner-container {
-			max-width: calc( 24em + var(--block_ui_margin) + var(--block_ui_margin) );
-		}
+    &.has-alignfull-content .wp-block-cover__inner-container {
+      max-width: none;
+    }
+  }
 
-		&.has-alignwide-content .wp-block-cover__inner-container {
-			max-width: calc( 70em + var(--block_ui_margin) + var(--block_ui_margin) );
-		}
+  [data-type="core/cover"] {
+    &[data-align="wide"],
+    &[data-align="full"] {
+      .wp-block-cover {
+        padding-left: 10%;
+        padding-right: 10%;
+      }
 
-		&.has-alignfull-content .wp-block-cover__inner-container {
-			max-width: none;
-		}
+      .wp-block-cover:not([class*="-min-height"]) {
+        min-height: $golden_major * 100vh;
+      }
+    }
 
-	}
+    &[data-align="left"],
+    &[data-align="right"] {
+      .wp-block-cover {
+        max-width: none;
+      }
 
-	[data-type="core/cover"] {
+      > .block-editor-block-list__block-edit {
+        width: $alignment_width;
+        max-width: $alignment_width;
+      }
+    }
 
-		&[data-align="wide"],
-		&[data-align="full"] {
-
-			.wp-block-cover {
-				padding-left: 10%;
-				padding-right: 10%;
-			}
-
-			.wp-block-cover:not([class*="-min-height"]) {
-				min-height: $golden_major * 100vh;
-			}
-
-		}
-
-		&[data-align="left"],
-		&[data-align="right"] {
-
-			.wp-block-cover {
-				max-width: none;
-			}
-
-			> .block-editor-block-list__block-edit {
-				width: $alignment_width;
-				max-width: $alignment_width;
-			}
-
-		}
-
-		&[data-align="center"] {
-			text-align: inherit;
-		}
-
-	}
-
+    &[data-align="center"] {
+      text-align: inherit;
+    }
+  }
 }
